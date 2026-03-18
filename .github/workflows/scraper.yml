@@ -1,13 +1,8 @@
 name: Facebook Leads Scraper
 
 on:
-  schedule:
-    # Run every 2 hours at minute 0
-    - cron: '0 */2 * * *'
   workflow_dispatch:
-    # Allow manual runs
-  push:
-    branches: [ main ]
+    # Allow manual runs only
 
 jobs:
   scrape-leads:
