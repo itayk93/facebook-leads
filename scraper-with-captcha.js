@@ -3,6 +3,52 @@ import fs from "fs";
 
 const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" OR "צריך") ("developer" OR "מפתח" OR "freelancer" OR "פרילנסר")`;
 const CAPSOLVER_API_KEY = 'CAP-9DDFD95A16595961E363FC8E1104DB827D8C27DD662A255F0B0BA1570C01D023';
+const GOOGLE_TIME_WINDOW = "y";
+
+function buildGoogleSearchUrl(start = 0) {
+  const tbsParts = ["sbd:1"];
+  if (GOOGLE_TIME_WINDOW && GOOGLE_TIME_WINDOW !== "all") {
+    tbsParts.unshift(`qdr:${GOOGLE_TIME_WINDOW}`);
+  }
+
+  const params = new URLSearchParams({
+    q: QUERY,
+    hl: "en",
+    tbs: tbsParts.join(","),
+    start: String(start)
+  });
+
+  return `https://www.google.com/search?${params.toString()}`;
+}
+
+function resolvePostTimeFromSnippet(snippet) {
+  if (!snippet || typeof snippet !== "string") return null;
+  const text = snippet.toLowerCase();
+  const now = new Date();
+  const match = text.match(/(\d+)\s*(minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)\s*ago/);
+  if (!match) return null;
+
+  const amount = Number(match[1]);
+  const unit = match[2];
+  const daysByUnit = {
+    minute: 1 / 1440,
+    minutes: 1 / 1440,
+    hour: 1 / 24,
+    hours: 1 / 24,
+    day: 1,
+    days: 1,
+    week: 7,
+    weeks: 7,
+    month: 30,
+    months: 30,
+    year: 365,
+    years: 365
+  };
+
+  const days = daysByUnit[unit];
+  if (!days || !amount) return null;
+  return new Date(now.getTime() - amount * days * 24 * 60 * 60 * 1000).toISOString();
+}
 
 // Solve captcha with Capsolver API
 async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
@@ -90,7 +136,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
 
   console.log("🔎 מחפש בגוגל...");
   await page.goto(
-    `https://www.google.com/search?q=${encodeURIComponent(QUERY)}&hl=en`,
+    buildGoogleSearchUrl(),
     { waitUntil: "domcontentloaded" }
   );
 
@@ -145,7 +191,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
     
     if (pageNum > 0) {
       // Navigate to next page
-      const nextPageUrl = `https://www.google.com/search?q=${encodeURIComponent(QUERY)}&hl=en&start=${pageNum * 10}`;
+      const nextPageUrl = buildGoogleSearchUrl(pageNum * 10);
       console.log(`🔗 עובר לעמוד הבא: ${nextPageUrl}`);
       await page.goto(nextPageUrl, { waitUntil: "domcontentloaded" });
       
@@ -184,16 +230,27 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
     )
   );
 
-  console.log(`🔥 לידים: ${leads.length}\n`);
+  const sortedLeads = leads
+    .map((lead) => ({
+      ...lead,
+      post_time: resolvePostTimeFromSnippet(lead.snippet)
+    }))
+    .sort((a, b) => {
+      const timeA = a.post_time ? Date.parse(a.post_time) : -Infinity;
+      const timeB = b.post_time ? Date.parse(b.post_time) : -Infinity;
+      return timeB - timeA;
+    });
 
-  leads.forEach((lead, i) => {
+  console.log(`🔥 לידים: ${sortedLeads.length}\n`);
+
+  sortedLeads.forEach((lead, i) => {
     console.log(`\n--- Lead ${i + 1} ---`);
     console.log("Title:", lead.title);
     console.log("Link:", lead.link);
     console.log("Snippet:", lead.snippet);
   });
 
-  fs.writeFileSync("leads.json", JSON.stringify(leads, null, 2));
+  fs.writeFileSync("leads.json", JSON.stringify(sortedLeads, null, 2));
   console.log("\n💾 נשמר ל-leads.json");
 
   await browser.close();
