@@ -3,6 +3,8 @@ name: Facebook Leads Scraper
 on:
   workflow_dispatch:
     # Allow manual runs only
+  schedule:
+    - cron: '0 * * * *'
 
 permissions:
   contents: write
@@ -12,6 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Skip nightly window (00:00-06:59 Israel)
+      run: |
+        if [ "${{ github.event_name }}" = "schedule" ]; then
+          CURRENT_HOUR=$(TZ=Asia/Jerusalem date +%H)
+          if [ "$CURRENT_HOUR" -ge 0 ] && [ "$CURRENT_HOUR" -lt 7 ]; then
+            echo "Skipping scheduled run during Israel night hours (00:00-06:59)."
+            exit 0
+          fi
+        fi
     - name: Checkout repository
       uses: actions/checkout@v5
       with:
