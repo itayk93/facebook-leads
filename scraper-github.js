@@ -1,10 +1,10 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups/posts ("מחפש" OR "מחפשים" OR "צריך" OR "דרוש" OR "דרושה" OR "looking for" OR "need") ("מפתח" OR "מתכנת" OR "פרילנסר" OR "developer" OR "freelancer" OR "אפליקציה" OR "אתר" OR "מערכת" OR "app" OR "website" OR "automation" OR "אוטומציה" OR "AI")`;
+const QUERY = `site:facebook.com/groups ("מחפש" OR "מחפשים" OR "צריך" OR "דרוש" OR "דרושה" OR "looking for" OR "need") ("מפתח" OR "מתכנת" OR "פרילנסר" OR "developer" OR "freelancer" OR "אפליקציה" OR "אתר" OR "מערכת" OR "app" OR "website" OR "automation" OR "אוטומציה" OR "AI" OR "lovable" OR "base44")`;
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY || 'CAP-9DDFD95A16595961E363FC8E1104DB827D8C27DD662A255F0B0BA1570C01D023';
 const GOOGLE_TIME_WINDOW = "w";
-const MAX_POST_AGE_DAYS = 5;
+const MAX_POST_AGE_DAYS = 10;
 const SEARCH_PROFILES = [
   { hl: "iw", lr: "lang_iw" },
   { hl: "iw" }
@@ -126,8 +126,8 @@ function classifyLead(lead) {
   const executionIntent = /(לבנות|הקמה|פיתוח|לפתח|שדרוג|תיקון|תחזוקה|ייצוב|הטמעה|לחבר|לסיים|להרים|פרודקשן)/.test(text);
   const commercialHint = /(בתשלום|אשלם|תקציב|עלות|עלויות|שעות|הצעת מחיר|פרויקט|לקוח|nda|אחוזים|חצי משרה|pay|budget|quote|rates)/.test(text);
 
-  const obviousNonTech = /(מפתח תקווה|בית מפתח|מנעול|הובלה|דירה|רכב|ב.מ.וו|מפתחות|שיפוצים|היכרויות)/.test(text);
-  if (providerSelfPromo || obviousNonTech) {
+  const obviousNonTech = /(מנעול|הובלה|דירה|רכב|ב.מ.וו|מפתחות|שיפוצים|היכרויות)/.test(text);
+  if (providerSelfPromo || (obviousNonTech && !techScope)) {
     return {
       classification: "לא ליד",
       evidence_quote: pickEvidenceQuote(raw),
@@ -148,7 +148,7 @@ function classifyLead(lead) {
   let classification = "לא ליד";
   if (score >= 6 && (commercialHint || executionIntent)) classification = "חזק";
   else if (score >= 4 && (explicitNeed || roleOrVendor) && techScope) classification = "בינוני";
-  else if (score >= 3 && (commercialHint || executionIntent)) classification = "חלש";
+  else if (score >= 3 && (commercialHint || executionIntent || explicitNeed)) classification = "חלש";
 
   const reason = classification === "לא ליד"
     ? "לא נמצא חיפוש שירות טכנולוגי מספיק ברור או הקשר מסחרי אמיתי."
@@ -354,7 +354,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
 
   const leads = allResults.filter((r) => {
     const text = `${r?.title || ""} ${r?.snippet || ""}`.toLowerCase();
-    return /(מחפש|מחפשים|צריך|צריכה|דרוש|דרושה|מפתח|מתכנת|פרילנסר|אפליקציה|אתר|מערכת|אוטומציה|בוט|ai|developer|freelancer)/.test(text);
+    return /(מחפש|מחפשים|צריך|צריכה|דרוש|דרושה|מפתח|מתכנת|פרילנסר|אפליקציה|אתר|מערכת|אוטומציה|בוט|ai|developer|freelancer|lovable|base44)/.test(text);
   });
 
   console.log(`🔥 לידים: ${leads.length}\n`);
