@@ -1,12 +1,17 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" OR "צריך") ("developer" OR "מפתח" OR "freelancer" OR "פרילנסר")`;
+const QUERY = `site:facebook.com/groups/posts ("מחפש" OR "מחפשים" OR "צריך" OR "דרוש" OR "דרושה" OR "looking for" OR "need") ("מפתח" OR "מתכנת" OR "פרילנסר" OR "developer" OR "freelancer" OR "אפליקציה" OR "אתר" OR "מערכת" OR "app" OR "website" OR "automation" OR "אוטומציה" OR "AI")`;
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
-const GOOGLE_TIME_WINDOW = "d";
-const MAX_POST_AGE_DAYS = 1;
+const GOOGLE_TIME_WINDOW = "w";
+const MAX_POST_AGE_DAYS = 5;
+const SEARCH_PROFILES = [
+  { hl: "iw", lr: "lang_iw" },
+  { hl: "iw" }
+];
 
-function buildGoogleSearchUrl(start = 0) {
+function buildGoogleSearchUrl(start = 0, profileIndex = 0) {
+  const profile = SEARCH_PROFILES[profileIndex] || SEARCH_PROFILES[0];
   const tbsParts = ["sbd:1"];
   if (GOOGLE_TIME_WINDOW && GOOGLE_TIME_WINDOW !== "all") {
     tbsParts.unshift(`qdr:${GOOGLE_TIME_WINDOW}`);
@@ -14,10 +19,11 @@ function buildGoogleSearchUrl(start = 0) {
 
   const params = new URLSearchParams({
     q: QUERY,
-    hl: "en",
+    hl: profile.hl,
     tbs: tbsParts.join(","),
     start: String(start)
   });
+  if (profile.lr) params.set("lr", profile.lr);
 
   return `https://www.google.com/search?${params.toString()}`;
 }
@@ -32,6 +38,26 @@ async function assertGoogleNotBlocked(page) {
   if (bodyText.includes("unusual traffic") || bodyText.includes("about this page")) {
     throw new Error("Google blocked this run due to unusual traffic.");
   }
+}
+
+async function navigateGoogleWithFallback(page, start = 0, preferredProfileIndex = 0) {
+  const order = [preferredProfileIndex, ...SEARCH_PROFILES.keys()].filter(
+    (idx, pos, arr) => arr.indexOf(idx) === pos
+  );
+
+  let lastError = null;
+  for (const profileIndex of order) {
+    const url = buildGoogleSearchUrl(start, profileIndex);
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    try {
+      await assertGoogleNotBlocked(page);
+      return profileIndex;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error("Google blocked all configured search profiles.");
 }
 
 function resolvePostTimeFromSnippet(snippet) {
@@ -88,6 +114,83 @@ function resolvePostTimeFromSnippet(snippet) {
   if (!days) return null;
 
   return new Date(now.getTime() - amount * days * 24 * 60 * 60 * 1000).toISOString();
+}
+
+function inferOpportunityType(text) {
+  if (/(שותף|שותפה|אחוזים|cofounder|equity)/.test(text)) return "שותפות / אחוזים";
+  if (/(ייעוץ|יועץ|consult|ייעוץ בפרטי|audit)/.test(text)) return "ייעוץ";
+  if (/(שדרוג|תחזוקה|תיקון|ייצוב|הטמעה|שיפור|שיפורים|מיגרציה)/.test(text)) return "תחזוקה / שדרוג";
+  if (/(לבנות|בנייה|הקמה|מאפס|mvp|אפליקציה|אתר|מערכת|דשבורד|crm|backend|frontend|full.?stack)/.test(text)) {
+    return "בנייה מאפס";
+  }
+  if (/(פרילנסר|פרילנס|מפתח|מתכנת|חברה|ספק|סטודיו|agency)/.test(text)) return "פרילנס / ספק";
+  return "לא רלוונטי";
+}
+
+function pickEvidenceQuote(rawText) {
+  const text = (rawText || "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+
+  const triggers = [
+    "מחפש", "מחפשים", "צריך", "דרוש", "דרושה", "פרילנסר", "מפתח", "מתכנת", "בתשלום",
+    "אשלם", "פרויקט", "הצעת מחיר", "זמינות", "עלויות", "לפנות בפרטי", "לפרודקשן", "NDA"
+  ];
+
+  const parts = text.split(/[\n.!?]+/).map((p) => p.trim()).filter(Boolean);
+  const hit = parts.find((p) => triggers.some((t) => p.includes(t)));
+  const quote = hit || parts[0] || "";
+  return quote.slice(0, 180);
+}
+
+function classifyLead(lead) {
+  const raw = `${lead?.title || ""}\n${lead?.snippet || ""}\n${lead?.full_content || ""}`;
+  const text = raw.toLowerCase();
+
+  const providerSelfPromo = /(for hire|available for freelance|מחפש עבודה|זמין לעבודה|מחפש משרה|אני פרילנסר|אני מציע|i offer)/.test(text);
+  const explicitNeed = /(מחפש|מחפשים|צריך|צריכה|דרוש|דרושה|looking for|need|מי פנוי|לפנות בפרטי)/.test(text);
+  const roleOrVendor = /(מפתח|מתכנת|פרילנסר|פרילנס|ספק|חברה|סטודיו|agency|developer|programmer|expert|מומחה|יועץ)/.test(text);
+  const techScope = /(אפליקציה|אתר|מערכת|crm|dashboard|דשבורד|automation|אוטומציה|api|integration|אינטגרציה|backend|frontend|ui\/ux|ux|סליקה|הרשאות|multi.?tenant|agent|בוט|chatbot|ai)/.test(text);
+  const executionIntent = /(לבנות|הקמה|פיתוח|לפתח|שדרוג|תיקון|תחזוקה|ייצוב|הטמעה|לחבר|לסיים|להרים|פרודקשן)/.test(text);
+  const commercialHint = /(בתשלום|אשלם|תקציב|עלות|עלויות|שעות|הצעת מחיר|פרויקט|לקוח|nda|אחוזים|חצי משרה|pay|budget|quote|rates)/.test(text);
+
+  const obviousNonTech = /(מפתח תקווה|בית מפתח|מנעול|הובלה|דירה|רכב|ב.מ.וו|מפתחות|שיפוצים|היכרויות)/.test(text);
+  if (providerSelfPromo || obviousNonTech) {
+    return {
+      classification: "לא ליד",
+      evidence_quote: pickEvidenceQuote(raw),
+      reason_he: providerSelfPromo
+        ? "הפוסט נראה כהצעת שירות/חיפוש עבודה של הכותב ולא בקשת ביצוע בתשלום."
+        : "הפוסט כולל מילות מפתח לא-טכנולוגיות ולכן אינו בקשת שירות טכנולוגי.",
+      opportunity_type: "לא רלוונטי"
+    };
+  }
+
+  let score = 0;
+  if (explicitNeed) score += 2;
+  if (roleOrVendor) score += 2;
+  if (techScope) score += 2;
+  if (executionIntent) score += 1;
+  if (commercialHint) score += 2;
+
+  let classification = "לא ליד";
+  if (score >= 6 && (commercialHint || executionIntent)) classification = "חזק";
+  else if (score >= 4 && (explicitNeed || roleOrVendor) && techScope) classification = "בינוני";
+  else if (score >= 3 && (commercialHint || executionIntent)) classification = "חלש";
+
+  const reason = classification === "לא ליד"
+    ? "לא נמצא חיפוש שירות טכנולוגי מספיק ברור או הקשר מסחרי אמיתי."
+    : (classification === "חזק"
+      ? "יש חיפוש ברור לביצוע עבודה טכנולוגית עם הקשר מסחרי/פרויקטלי."
+      : classification === "בינוני"
+        ? "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים."
+        : "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.");
+
+  return {
+    classification,
+    evidence_quote: pickEvidenceQuote(raw),
+    reason_he: reason,
+    opportunity_type: classification === "לא ליד" ? "לא רלוונטי" : inferOpportunityType(text)
+  };
 }
 
 // Solve captcha with Capsolver API
@@ -311,11 +414,7 @@ async function extractFacebookContentAndTime(browser, url) {
     });
   });
 
-  await page.goto(
-    buildGoogleSearchUrl(),
-    { waitUntil: "domcontentloaded" }
-  );
-  await assertGoogleNotBlocked(page);
+  let activeProfileIndex = await navigateGoogleWithFallback(page, 0, 0);
 
   // Check for captcha
   const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
@@ -357,9 +456,7 @@ async function extractFacebookContentAndTime(browser, url) {
   for (let pageNum = 0; pageNum < 3; pageNum++) {
     if (pageNum > 0) {
       // Navigate to next page
-      const nextPageUrl = buildGoogleSearchUrl(pageNum * 10);
-      await page.goto(nextPageUrl, { waitUntil: "domcontentloaded" });
-      await assertGoogleNotBlocked(page);
+      activeProfileIndex = await navigateGoogleWithFallback(page, pageNum * 10, activeProfileIndex);
       
       // Check for captcha again
       const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
@@ -370,15 +467,28 @@ async function extractFacebookContentAndTime(browser, url) {
       await page.waitForTimeout(2000);
     }
 
-    const results = await page.$$eval("div[data-ved]", nodes =>
-      nodes.map(n => {
-        const title = n.querySelector("h3")?.innerText;
-        const link = n.querySelector("a")?.href;
-        const snippet = n.querySelector("span")?.innerText;
+    const results = await page.evaluate(() => {
+      const seen = new Set();
+      const items = [];
+      const headings = Array.from(document.querySelectorAll("h3"));
 
-        return { title, link, snippet };
-      }).filter(r => r.title && r.link)
-    );
+      for (const h3 of headings) {
+        const title = h3.innerText?.trim();
+        const anchor = h3.closest("a");
+        const link = anchor?.href || "";
+
+        if (!title || !link || seen.has(link)) continue;
+
+        const container = anchor.closest("div");
+        const rawText = container?.innerText || "";
+        const snippet = rawText.replace(/\s+/g, " ").trim().slice(0, 500);
+
+        items.push({ title, link, snippet });
+        seen.add(link);
+      }
+
+      return items.filter((r) => r.title && r.link);
+    });
 
     allResults = allResults.concat(results);
     
@@ -388,7 +498,7 @@ async function extractFacebookContentAndTime(browser, url) {
 
   const leads = allResults.filter((r) => {
     const text = `${r?.title || ""} ${r?.snippet || ""}`.toLowerCase();
-    return /(looking for|need|מחפש|צריך|freelancer|developer|מפתח)/.test(text);
+    return /(מחפש|מחפשים|צריך|צריכה|דרוש|דרושה|מפתח|מתכנת|פרילנסר|אפליקציה|אתר|מערכת|אוטומציה|בוט|ai|developer|freelancer)/.test(text);
   });
 
   // Remove duplicates based on title
@@ -412,6 +522,11 @@ async function extractFacebookContentAndTime(browser, url) {
 
     const resolvedPostTime = extracted?.post_time || resolvePostTimeFromSnippet(lead.snippet);
 
+    const classification = classifyLead({
+      ...lead,
+      full_content: content || null
+    });
+
     const enhancedLead = {
       ...lead,
       full_content: content || null,
@@ -420,7 +535,11 @@ async function extractFacebookContentAndTime(browser, url) {
       post_time: resolvedPostTime || null,
       post_time_source: extracted?.post_time
         ? (extracted?.post_time_source || "facebook")
-        : (resolvedPostTime ? "google_snippet_relative_time" : null)
+        : (resolvedPostTime ? "google_snippet_relative_time" : null),
+      classification: classification.classification,
+      evidence_quote: classification.evidence_quote,
+      reason_he: classification.reason_he,
+      opportunity_type: classification.opportunity_type
     };
     
     enhancedLeads.push(enhancedLead);
@@ -447,12 +566,14 @@ async function extractFacebookContentAndTime(browser, url) {
       })
     : sortedLeads;
 
+  const finalFilteredLeads = freshLeads.filter((lead) => lead.classification !== "לא ליד");
+
   // Add timestamp
   const finalLeads = {
     timestamp: new Date().toISOString(),
-    total_leads: freshLeads.length,
-    enhanced_leads: freshLeads.filter(l => l.enhanced).length,
-    leads: freshLeads
+    total_leads: finalFilteredLeads.length,
+    enhanced_leads: finalFilteredLeads.filter(l => l.enhanced).length,
+    leads: finalFilteredLeads
   };
 
   // Output only JSON
