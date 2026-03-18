@@ -1,0 +1,77 @@
+name: Facebook Leads Scraper
+
+on:
+  schedule:
+    # Run every 2 hours
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+    # Allow manual runs
+  push:
+    branches: [ main, master ]
+
+jobs:
+  scrape-leads:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright browsers
+      run: npx playwright install chromium
+      
+    - name: Run Facebook Leads Scraper
+      env:
+        CAPSOLVER_API_KEY: ${{ secrets.CAPSOLVER_API_KEY }}
+      run: |
+        echo "🔥 Starting Facebook Leads Scraper..."
+        node scraper-enhanced.js
+        
+    - name: Check if leads.json was updated
+      id: check-leads
+      run: |
+        if [ -f "leads-enhanced.json" ]; then
+          echo "leads_exists=true" >> $GITHUB_OUTPUT
+          LEADS_COUNT=$(cat leads-enhanced.json | jq '.total_leads')
+          echo "leads_count=$LEADS_COUNT" >> $GITHUB_OUTPUT
+          echo "📦 Found $LEADS_COUNT leads"
+        else
+          echo "leads_exists=false" >> $GITHUB_OUTPUT
+          echo "❌ No leads-enhanced.json file found"
+        fi
+        
+    - name: Commit and push results
+      if: steps.check-leads.outputs.leads_exists == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add leads-enhanced.json
+        git diff --staged --quiet || git commit -m "🔥 Update leads - ${{ steps.check-leads.outputs.leads_count }} leads found"
+        git push
+        
+    - name: Create summary
+      if: steps.check-leads.outputs.leads_exists == 'true'
+      run: |
+        echo "## 📊 Facebook Leads Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- **Total Leads Found:** ${{ steps.check-leads.outputs.leads_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Enhanced Leads:** $(cat leads-enhanced.json | jq '.enhanced_leads')" >> $GITHUB_STEP_SUMMARY
+        echo "- **Scraping Time:** $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📋 Recent Leads:" >> $GITHUB_STEP_SUMMARY
+        cat leads-enhanced.json | jq -r '.leads[0:5] | to_entries | .[] | "#### \(.key + 1). \(.value.title | split("\n")[0])"' >> $GITHUB_STEP_SUMMARY
+        
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "❌ Facebook Leads Scraper failed!"
+        echo "Check the logs above for more details."
