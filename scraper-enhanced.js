@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" OR "צריך") ("developer" OR "מפתח" OR "freelancer" OR "פרילנסר")`;
+const QUERY = `site:facebook.com/groups/posts ("freelance" OR "freelancer" OR "פרילנס" OR "פרילנסר") ("lovable" OR "base44")`;
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
 const GOOGLE_TIME_WINDOW = "y";
 const MAX_POST_AGE_DAYS = 365;
@@ -372,11 +372,12 @@ async function extractFacebookContentAndTime(browser, url) {
     await page.waitForTimeout(1000);
   }
 
-  const leads = allResults.filter(r =>
-    r?.snippet?.toLowerCase().match(
-      /(looking for|need|מחפש|צריך|freelancer|developer|מפתח)/
-    )
-  );
+  const leads = allResults.filter((r) => {
+    const text = `${r?.title || ""} ${r?.snippet || ""}`.toLowerCase();
+    const hasFreelance = /(freelance|freelancer|פרילנס|פרילנסר)/.test(text);
+    const hasTargetTool = /(lovable|base44)/.test(text);
+    return hasFreelance && hasTargetTool;
+  });
 
   // Remove duplicates based on title
   const uniqueLeads = leads.filter((lead, index, self) =>

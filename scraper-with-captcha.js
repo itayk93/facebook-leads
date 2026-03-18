@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" OR "צריך") ("developer" OR "מפתח" OR "freelancer" OR "פרילנסר")`;
+const QUERY = `site:facebook.com/groups/posts ("freelance" OR "freelancer" OR "פרילנס" OR "פרילנסר") ("lovable" OR "base44")`;
 const CAPSOLVER_API_KEY = 'CAP-9DDFD95A16595961E363FC8E1104DB827D8C27DD662A255F0B0BA1570C01D023';
 const GOOGLE_TIME_WINDOW = "y";
 
@@ -224,11 +224,12 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
 
   console.log(`📦 סה"כ נמצאו ${allResults.length} תוצאות מ-3 עמודים\n`);
 
-  const leads = allResults.filter(r =>
-    r?.snippet?.toLowerCase().match(
-      /(looking for|need|מחפש|צריך|freelancer|developer|מפתח)/
-    )
-  );
+  const leads = allResults.filter((r) => {
+    const text = `${r?.title || ""} ${r?.snippet || ""}`.toLowerCase();
+    const hasFreelance = /(freelance|freelancer|פרילנס|פרילנסר)/.test(text);
+    const hasTargetTool = /(lovable|base44)/.test(text);
+    return hasFreelance && hasTargetTool;
+  });
 
   const sortedLeads = leads
     .map((lead) => ({
