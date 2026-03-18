@@ -69,6 +69,26 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 📋 Recent Leads:" >> $GITHUB_STEP_SUMMARY
         cat leads-enhanced.json | jq -r '.leads[0:5] | to_entries | .[] | "#### \(.key + 1). \(.value.title | split("\n")[0])"' >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📄 Raw JSON Output:" >> $GITHUB_STEP_SUMMARY
+        echo '```json' >> $GITHUB_STEP_SUMMARY
+        cat leads-enhanced.json >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+        
+    - name: Output JSON to console
+      if: steps.check-leads.outputs.leads_exists == 'true'
+      run: |
+        echo "::group::📄 Complete JSON Output"
+        cat leads-enhanced.json
+        echo "::endgroup::"
+        
+    - name: Upload JSON as artifact
+      if: steps.check-leads.outputs.leads_exists == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: facebook-leads-json
+        path: leads-enhanced.json
+        retention-days: 30
         
     - name: Notify on failure
       if: failure()
