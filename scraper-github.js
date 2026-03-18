@@ -1,9 +1,9 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups/posts ("freelance" OR "freelancer" OR "פרילנס" OR "פרילנסר") ("lovable" OR "base44")`;
+const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" OR "צריך") ("developer" OR "מפתח" OR "freelancer" OR "פרילנסר")`;
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY || 'CAP-9DDFD95A16595961E363FC8E1104DB827D8C27DD662A255F0B0BA1570C01D023';
-const GOOGLE_TIME_WINDOW = "y";
+const GOOGLE_TIME_WINDOW = "d";
 
 function buildGoogleSearchUrl(start = 0) {
   const tbsParts = ["sbd:1"];
@@ -19,6 +19,18 @@ function buildGoogleSearchUrl(start = 0) {
   });
 
   return `https://www.google.com/search?${params.toString()}`;
+}
+
+async function assertGoogleNotBlocked(page) {
+  const url = page.url();
+  if (url.includes("google.com/sorry")) {
+    throw new Error(`Google blocked this run with /sorry page: ${url}`);
+  }
+
+  const bodyText = await page.evaluate(() => (document.body?.innerText || "").toLowerCase());
+  if (bodyText.includes("unusual traffic") || bodyText.includes("about this page")) {
+    throw new Error("Google blocked this run due to unusual traffic.");
+  }
 }
 
 function resolvePostTimeFromSnippet(snippet) {
@@ -141,6 +153,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
     buildGoogleSearchUrl(),
     { waitUntil: "domcontentloaded" }
   );
+  await assertGoogleNotBlocked(page);
 
   // Check for captcha
   const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
@@ -196,6 +209,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
       const nextPageUrl = buildGoogleSearchUrl(pageNum * 10);
       console.log(`🔗 עובר לעמוד הבא: ${nextPageUrl}`);
       await page.goto(nextPageUrl, { waitUntil: "domcontentloaded" });
+      await assertGoogleNotBlocked(page);
       
       // Check for captcha again
       const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
@@ -228,9 +242,7 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
 
   const leads = allResults.filter((r) => {
     const text = `${r?.title || ""} ${r?.snippet || ""}`.toLowerCase();
-    const hasFreelance = /(freelance|freelancer|פרילנס|פרילנסר)/.test(text);
-    const hasTargetTool = /(lovable|base44)/.test(text);
-    return hasFreelance && hasTargetTool;
+    return /(looking for|need|מחפש|צריך|freelancer|developer|מפתח)/.test(text);
   });
 
   console.log(`🔥 לידים: ${leads.length}\n`);
