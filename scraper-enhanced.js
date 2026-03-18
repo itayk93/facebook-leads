@@ -7,8 +7,6 @@ const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
 // Solve captcha with Capsolver API
 async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
   try {
-    console.log("🤖 פותר captcha עם Capsolver...");
-    
     const response = await fetch('https://api.capsolver.com/createTask', {
       method: 'POST',
       headers: {
@@ -26,7 +24,6 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
     });
 
     const taskData = await response.json();
-    console.log("📝 Task created:", taskData.taskId);
 
     if (taskData.errorId !== 0) {
       throw new Error(taskData.errorDescription);
@@ -53,16 +50,12 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
       
       if (result.status === 'ready') {
         solution = result.solution.gRecaptchaResponse;
-        console.log("✅ Captcha נפתר!");
         break;
       }
-      
-      console.log(`⏳ מחכה לפתרון... (${i + 1}/30)`);
     }
 
     return solution;
   } catch (error) {
-    console.log("❌ שגיאה ב-Capsolver:", error.message);
     return null;
   }
 }
@@ -70,8 +63,6 @@ async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
 // Extract more content from Facebook post
 async function extractFacebookContent(browser, url) {
   try {
-    console.log("🔗 מנסה לשלוף תוכן מלא מ:", url);
-    
     // Create new context for Facebook
     const context = await browser.newContext({
       userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -104,7 +95,6 @@ async function extractFacebookContent(browser, url) {
           const content = await element.innerText().catch(() => null);
           if (content && content.length > 100) {
             fullContent = content;
-            console.log("✅ נמצא תוכן עם סלקטור:", selector);
             break;
           }
         }
@@ -133,24 +123,19 @@ async function extractFacebookContent(browser, url) {
     await context.close();
     
     if (fullContent && fullContent.length > 100) {
-      console.log("✅ הצלחנו לשלוף תוכן מלא:", fullContent.length, "תווים");
       return fullContent.substring(0, 1000); // Limit to 1000 chars
     }
     
     return null;
   } catch (error) {
-    console.log("❌ שגיאה בשליפת תוכן מפייסבוק:", error.message);
     return null;
   }
 }
 
 (async () => {
-  console.log("🚀 Starting Enhanced Facebook Leads Scraper...");
-  
   // Check if environment variable is set
   if (!CAPSOLVER_API_KEY) {
-    console.error("❌ CAPSOLVER_API_KEY environment variable is required!");
-    console.log("Please set it in your .env file or GitHub Actions secrets");
+    console.error("CAPSOLVER_API_KEY environment variable is required!");
     process.exit(1);
   }
   
@@ -174,7 +159,6 @@ async function extractFacebookContent(browser, url) {
     });
   });
 
-  console.log("🔎 מחפש בגוגל...");
   await page.goto(
     `https://www.google.com/search?q=${encodeURIComponent(QUERY)}&hl=en`,
     { waitUntil: "domcontentloaded" }
@@ -184,16 +168,12 @@ async function extractFacebookContent(browser, url) {
   const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
   
   if (captchaExists) {
-    console.log("🚨 זוהה captcha!");
-    
     // Get site key
     const siteKey = await page.$eval('div[class*="recaptcha"]', el => 
       el.getAttribute('data-sitekey')
     ).catch(() => null);
 
     if (siteKey) {
-      console.log("🔑 Site key:", siteKey);
-      
       // Solve with Capsolver
       const solution = await solveCaptchaWithCapsolver(siteKey, page.url());
       
@@ -209,15 +189,10 @@ async function extractFacebookContent(browser, url) {
             window.grecaptchaCallback(token);
           }
         }, solution);
-        
-        console.log("✅ Captaptcha נפתר אוטומטית!");
       } else {
-        console.log("⏳ ממתין לפתרון ידני (15 שניות)...");
         await page.waitForTimeout(15000);
       }
     }
-  } else {
-    console.log("✅ אין captcha");
   }
 
   // Rest of scraping logic...
@@ -227,18 +202,14 @@ async function extractFacebookContent(browser, url) {
   
   // Scrape multiple pages
   for (let pageNum = 0; pageNum < 3; pageNum++) {
-    console.log(`📄 עובד על עמוד ${pageNum + 1}...`);
-    
     if (pageNum > 0) {
       // Navigate to next page
       const nextPageUrl = `https://www.google.com/search?q=${encodeURIComponent(QUERY)}&hl=en&start=${pageNum * 10}`;
-      console.log(`🔗 עובר לעמוד הבא: ${nextPageUrl}`);
       await page.goto(nextPageUrl, { waitUntil: "domcontentloaded" });
       
       // Check for captcha again
       const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
       if (captchaExists) {
-        console.log("🚨 Captcha בעמוד הבא, ממתין 10 שניות...");
         await page.waitForTimeout(10000);
       }
       
@@ -255,22 +226,17 @@ async function extractFacebookContent(browser, url) {
       }).filter(r => r.title && r.link)
     );
 
-    console.log(`📦 עמוד ${pageNum + 1}: ${results.length} תוצאות`);
     allResults = allResults.concat(results);
     
     // Small delay between pages
     await page.waitForTimeout(1000);
   }
 
-  console.log(`📦 סה"כ נמצאו ${allResults.length} תוצאות מ-3 עמודים\n`);
-
   const leads = allResults.filter(r =>
     r?.snippet?.toLowerCase().match(
       /(looking for|need|מחפש|צריך|freelancer|developer|מפתח)/
     )
   );
-
-  console.log(`🔥 לידים: ${leads.length}\n`);
 
   // Remove duplicates based on title
   const uniqueLeads = leads.filter((lead, index, self) =>
@@ -279,14 +245,11 @@ async function extractFacebookContent(browser, url) {
     ))
   );
 
-  console.log(`🎯 לידים ייחודיים: ${uniqueLeads.length}\n`);
-
   // Extract more content for each lead
   const enhancedLeads = [];
   
   for (let i = 0; i < uniqueLeads.length; i++) {
     const lead = uniqueLeads[i];
-    console.log(`🔍 משפר ליד ${i + 1}/${uniqueLeads.length}: ${lead.title.substring(0, 50)}...`);
     
     // Try to get more content from Facebook
     const fullContent = await extractFacebookContent(browser, lead.link);
@@ -312,13 +275,10 @@ async function extractFacebookContent(browser, url) {
     leads: enhancedLeads
   };
 
-  fs.writeFileSync("leads-enhanced.json", JSON.stringify(finalLeads, null, 2));
-  console.log("\n💾 נשמר ל-leads-enhanced.json");
+  // Output only JSON
+  console.log(JSON.stringify(finalLeads));
 
-  // Show enhancement stats
-  const enhancedCount = enhancedLeads.filter(l => l.enhanced).length;
-  console.log(`📊 סטטיסטיקות שיפור: ${enhancedCount}/${enhancedLeads.length} לידים שופרו`);
+  fs.writeFileSync("leads-enhanced.json", JSON.stringify(finalLeads, null, 2));
 
   await browser.close();
-  console.log("✅ Enhanced scraping completed successfully!");
 })();

@@ -6,12 +6,9 @@ const QUERY = `site:facebook.com/groups ("looking for" OR "need" OR "מחפש" O
 // Solve captcha with Capsolver
 async function solveCaptcha(page) {
   try {
-    console.log("🤖 מנסה לפתור captcha...");
-    
     // Check if captcha exists
     const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
     if (!captchaExists) {
-      console.log("✅ אין captcha");
       return true;
     }
 
@@ -21,20 +18,15 @@ async function solveCaptcha(page) {
     ).catch(() => null);
 
     if (!siteKey) {
-      console.log("❌ לא מצאתי site key");
       return false;
     }
 
-    console.log("🔑 Site key:", siteKey);
-
     // Solve with Capsolver (you'll need to install their SDK or use API)
     // For now, let's wait for manual solve
-    console.log("⏳ ממתין לפתרון captcha ידני (15 שניות)...");
     await page.waitForTimeout(15000);
     
     return true;
   } catch (error) {
-    console.log("❌ שגיאה בפתרון captcha:", error.message);
     return false;
   }
 }
@@ -60,7 +52,6 @@ async function solveCaptcha(page) {
     });
   });
 
-  console.log("🔎 מחפש בגוגל...");
   await page.goto(
     `https://www.google.com/search?q=${encodeURIComponent(QUERY)}&hl=en`,
     { waitUntil: "domcontentloaded" }
@@ -69,20 +60,17 @@ async function solveCaptcha(page) {
   // Handle captcha
   const captchaSolved = await solveCaptcha(page);
   if (!captchaSolved) {
-    console.log("❌ לא הצלחנו לפתור את ה-captcha, מנסה להמשיך בלי בעיה...");
+    // Continue without captcha solve
   }
 
   // Debug - check page content
   const pageContent = await page.content();
-  console.log("Page loaded, length:", pageContent.length);
   
   // Check what selectors exist
   const allDivs = await page.$$eval('div', divs => divs.length);
-  console.log("Total divs found:", allDivs);
   
   // Try different selectors
   const searchResults = await page.$$eval('div[data-ved]', nodes => nodes.length);
-  console.log("Search results with data-ved:", searchResults);
   
   // קבלת תוצאות
   const results = await page.$$eval("div[data-ved]", nodes =>
@@ -95,8 +83,6 @@ async function solveCaptcha(page) {
     }).filter(r => r.title && r.link)
   );
 
-  console.log(`📦 נמצאו ${results.length} תוצאות\n`);
-
   // סינון לידים אמיתיים
   const leads = results.filter(r =>
     r?.snippet?.toLowerCase().match(
@@ -104,18 +90,11 @@ async function solveCaptcha(page) {
     )
   );
 
-  console.log(`🔥 לידים: ${leads.length}\n`);
-
-  leads.forEach((lead, i) => {
-    console.log(`\n--- Lead ${i + 1} ---`);
-    console.log("Title:", lead.title);
-    console.log("Link:", lead.link);
-    console.log("Snippet:", lead.snippet);
-  });
+  // Output only JSON
+  console.log(JSON.stringify(leads));
 
   // שמירה לקובץ
   fs.writeFileSync("leads.json", JSON.stringify(leads, null, 2));
-  console.log("\n💾 נשמר ל-leads.json");
 
   await browser.close();
 })();
