@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-03-19T11:36:18.478Z",
+  "timestamp": "2026-03-19T11:46:44.170Z",
   "window": "7d",
   "debug": {
     "raw_results": 60,
     "keyword_filtered": 60,
-    "unique_links": 41,
-    "enhanced_attempts": 41,
+    "unique_links": 43,
+    "enhanced_attempts": 43,
     "within_window_or_unknown": 0,
     "unknown_post_time": 0,
-    "unknown_post_time_excluded": 41,
+    "unknown_post_time_excluded": 43,
     "include_unknown_time": false
   },
   "total_leads": 0,
@@ -27,31 +27,19 @@
   "new_leads": [],
   "raw_results": 60,
   "keyword_filtered": 60,
-  "unique_links": 41,
-  "enhanced_attempts": 41,
+  "unique_links": 43,
+  "enhanced_attempts": 43,
   "raw_results_items": [
     {
-      "title": "היי לכולם 👋",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
-      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35014451724819881/",
+      "snippet": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
-      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
-      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "בניתי מערכת מרקטפלייס ואני מחפש חברת סליקה שיהיה נוח לחבר ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34929099050021816/",
+      "snippet": "בניתי מערכת מרקטפלייס ואני מחפש חברת סליקה שיהיה נוח לחבר ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -61,15 +49,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35014451724819881/",
-      "snippet": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "title": "היי לכולם 👋",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
+      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
-      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
+      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
+      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "התשלום החודשי הכי גדול של רוב משקי הבית הוא תשלום המשכנתא. ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994860056779048/",
+      "snippet": "התשלום החודשי הכי גדול של רוב משקי הבית הוא תשלום המשכנתא. ... Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -79,15 +79,15 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "האם אפשר להעביר פרויקט lovable מחשבון אחד לחשבון אחר?",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35022398037358583/",
-      "snippet": "האם אפשר להעביר פרויקט lovable מחשבון אחד לחשבון אחר? Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
+      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
-      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
+      "title": "בניתי פלטפורמה ב-Lovable לשוק הבינלאומי",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35006445062287214/",
+      "snippet": "בניתי פלטפורמה ב-Lovable לשוק הבינלאומי Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -393,27 +393,15 @@
   ],
   "keyword_filtered_items": [
     {
-      "title": "היי לכולם 👋",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
-      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35014451724819881/",
+      "snippet": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
-      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
-      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "בניתי מערכת מרקטפלייס ואני מחפש חברת סליקה שיהיה נוח לחבר ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34929099050021816/",
+      "snippet": "בניתי מערכת מרקטפלייס ואני מחפש חברת סליקה שיהיה נוח לחבר ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -423,15 +411,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35014451724819881/",
-      "snippet": "מחפש בתשלום כמובן מישהן שיכול להכין תוכנת erp לניהול סטוק ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "title": "היי לכולם 👋",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
+      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
-      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
+      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
+      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "התשלום החודשי הכי גדול של רוב משקי הבית הוא תשלום המשכנתא. ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994860056779048/",
+      "snippet": "התשלום החודשי הכי גדול של רוב משקי הבית הוא תשלום המשכנתא. ... Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -441,15 +441,15 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "האם אפשר להעביר פרויקט lovable מחשבון אחד לחשבון אחר?",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35022398037358583/",
-      "snippet": "האם אפשר להעביר פרויקט lovable מחשבון אחד לחשבון אחר? Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
+      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
-      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
+      "title": "בניתי פלטפורמה ב-Lovable לשוק הבינלאומי",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35006445062287214/",
+      "snippet": "בניתי פלטפורמה ב-Lovable לשוק הבינלאומי Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
