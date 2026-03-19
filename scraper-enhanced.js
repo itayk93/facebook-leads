@@ -1,16 +1,25 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const QUERY = `site:facebook.com/groups ("מחפש" OR "מחפשים" OR "צריך" OR "דרוש" OR "דרושה" OR "looking for" OR "need") ("מפתח" OR "מתכנת" OR "פרילנסר" OR "developer" OR "freelancer" OR "אפליקציה" OR "אתר" OR "מערכת" OR "app" OR "website" OR "automation" OR "אוטומציה" OR "AI" OR "lovable" OR "base44")`;
+const SEARCH_QUERIES = [
+  {
+    label: "🔥 חיפוש 1 — כוונה + כסף",
+    terms: `site:facebook.com/groups ("base44" OR "lovable") ("מחפש" OR "צריך") ("תשלום" OR "אשלם" OR "פרילנסר" OR "תקציב")`
+  },
+  {
+    label: "🔥 חיפוש 2 — כאב (הרבה יותר חזק)",
+    terms: `site:facebook.com/groups ("base44" OR "lovable") ("לא עובד" OR "תקוע" OR "בעיה")`
+  }
+];
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
-const GOOGLE_TIME_WINDOW = "w";
-const MAX_POST_AGE_DAYS = 10;
+const GOOGLE_TIME_WINDOW = "d";
+const MAX_POST_AGE_DAYS = 1;
 const SEARCH_PROFILES = [
   { hl: "iw", lr: "lang_iw" },
   { hl: "iw" }
 ];
 
-function buildGoogleSearchUrl(start = 0, profileIndex = 0) {
+function buildGoogleSearchUrl(query, start = 0, profileIndex = 0) {
   const profile = SEARCH_PROFILES[profileIndex] || SEARCH_PROFILES[0];
   const tbsParts = ["sbd:1"];
   if (GOOGLE_TIME_WINDOW && GOOGLE_TIME_WINDOW !== "all") {
@@ -18,7 +27,7 @@ function buildGoogleSearchUrl(start = 0, profileIndex = 0) {
   }
 
   const params = new URLSearchParams({
-    q: QUERY,
+    q: query,
     hl: profile.hl,
     tbs: tbsParts.join(","),
     start: String(start)
@@ -40,14 +49,15 @@ async function assertGoogleNotBlocked(page) {
   }
 }
 
-async function navigateGoogleWithFallback(page, start = 0, preferredProfileIndex = 0) {
-  const order = [preferredProfileIndex, ...SEARCH_PROFILES.keys()].filter(
+async function navigateGoogleWithFallback(page, query, start = 0, preferredProfileIndex = 0) {
+  const profileIndices = SEARCH_PROFILES.map((_, idx) => idx);
+  const order = [preferredProfileIndex, ...profileIndices].filter(
     (idx, pos, arr) => arr.indexOf(idx) === pos
   );
 
   let lastError = null;
   for (const profileIndex of order) {
-    const url = buildGoogleSearchUrl(start, profileIndex);
+    const url = buildGoogleSearchUrl(query, start, profileIndex);
     await page.goto(url, { waitUntil: "domcontentloaded" });
     try {
       await assertGoogleNotBlocked(page);
@@ -58,6 +68,85 @@ async function navigateGoogleWithFallback(page, start = 0, preferredProfileIndex
   }
 
   throw lastError || new Error("Google blocked all configured search profiles.");
+}
+
+async function ensureCaptchaSolved(page) {
+  const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
+  if (!captchaExists) return;
+
+  const siteKey = await page.$eval('div[class*="recaptcha"]', el =>
+    el.getAttribute('data-sitekey')
+  ).catch(() => null);
+
+  if (!siteKey) {
+    await page.waitForTimeout(15000);
+    return;
+  }
+
+  const solution = await solveCaptchaWithCapsolver(siteKey, page.url());
+  if (!solution) {
+    await page.waitForTimeout(15000);
+    return;
+  }
+
+  await page.evaluate((token) => {
+    window.grecaptchaCallback = window.grecaptchaCallback || (() => {});
+    window.grecaptchaCallback(token);
+  }, solution);
+}
+
+async function collectSearchResultsForQuery(page, searchQuery) {
+  const aggregated = [];
+  let activeProfileIndex = await navigateGoogleWithFallback(page, searchQuery.terms, 0, 0);
+  await ensureCaptchaSolved(page);
+  await page.waitForTimeout(3000);
+
+  for (let pageNum = 0; pageNum < 3; pageNum++) {
+    if (pageNum > 0) {
+      activeProfileIndex = await navigateGoogleWithFallback(
+        page,
+        searchQuery.terms,
+        pageNum * 10,
+        activeProfileIndex
+      );
+      await ensureCaptchaSolved(page);
+      await page.waitForTimeout(2000);
+    }
+
+    const results = await page.evaluate(() => {
+      const seen = new Set();
+      const items = [];
+      const headings = Array.from(document.querySelectorAll("h3"));
+
+      for (const h3 of headings) {
+        const title = h3.innerText?.trim();
+        const anchor = h3.closest("a");
+        const link = anchor?.href || "";
+
+        if (!title || !link || seen.has(link)) continue;
+
+        const container = anchor.closest("div");
+        const rawText = container?.innerText || "";
+        const snippet = rawText.replace(/\s+/g, " ").trim().slice(0, 500);
+
+        items.push({ title, link, snippet });
+        seen.add(link);
+      }
+
+      return items.filter((r) => r.title && r.link);
+    });
+
+    aggregated.push(
+      ...results.map((result) => ({
+        ...result,
+        query_label: searchQuery.label
+      }))
+    );
+
+    await page.waitForTimeout(1000);
+  }
+
+  return aggregated;
 }
 
 function resolvePostTimeFromSnippet(snippet) {
@@ -414,86 +503,10 @@ async function extractFacebookContentAndTime(browser, url) {
     });
   });
 
-  let activeProfileIndex = await navigateGoogleWithFallback(page, 0, 0);
-
-  // Check for captcha
-  const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
-  
-  if (captchaExists) {
-    // Get site key
-    const siteKey = await page.$eval('div[class*="recaptcha"]', el => 
-      el.getAttribute('data-sitekey')
-    ).catch(() => null);
-
-    if (siteKey) {
-      // Solve with Capsolver
-      const solution = await solveCaptchaWithCapsolver(siteKey, page.url());
-      
-      if (solution) {
-        // Inject solution
-        await page.evaluate((token) => {
-          window.grecaptchaCallback = (token) => {
-            console.log("Captcha solved with token:", token);
-          };
-          
-          // Simulate callback
-          if (window.grecaptchaCallback) {
-            window.grecaptchaCallback(token);
-          }
-        }, solution);
-      } else {
-        await page.waitForTimeout(15000);
-      }
-    }
-  }
-
-  // Rest of scraping logic...
-  await page.waitForTimeout(3000);
-
-  let allResults = [];
-  
-  // Scrape multiple pages
-  for (let pageNum = 0; pageNum < 3; pageNum++) {
-    if (pageNum > 0) {
-      // Navigate to next page
-      activeProfileIndex = await navigateGoogleWithFallback(page, pageNum * 10, activeProfileIndex);
-      
-      // Check for captcha again
-      const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
-      if (captchaExists) {
-        await page.waitForTimeout(10000);
-      }
-      
-      await page.waitForTimeout(2000);
-    }
-
-    const results = await page.evaluate(() => {
-      const seen = new Set();
-      const items = [];
-      const headings = Array.from(document.querySelectorAll("h3"));
-
-      for (const h3 of headings) {
-        const title = h3.innerText?.trim();
-        const anchor = h3.closest("a");
-        const link = anchor?.href || "";
-
-        if (!title || !link || seen.has(link)) continue;
-
-        const container = anchor.closest("div");
-        const rawText = container?.innerText || "";
-        const snippet = rawText.replace(/\s+/g, " ").trim().slice(0, 500);
-
-        items.push({ title, link, snippet });
-        seen.add(link);
-      }
-
-      return items.filter((r) => r.title && r.link);
-    });
-
-    allResults = allResults.concat(results);
-    
-    // Small delay between pages
-    await page.waitForTimeout(1000);
+  const allResults = [];
+  for (const searchQuery of SEARCH_QUERIES) {
+    const queryResults = await collectSearchResultsForQuery(page, searchQuery);
+    allResults.push(...queryResults);
   }
 
   const leads = allResults.filter((r) => {
@@ -501,10 +514,10 @@ async function extractFacebookContentAndTime(browser, url) {
     return /(מחפש|מחפשים|צריך|צריכה|דרוש|דרושה|מפתח|מתכנת|פרילנסר|אפליקציה|אתר|מערכת|אוטומציה|בוט|ai|developer|freelancer|lovable|base44)/.test(text);
   });
 
-  // Remove duplicates based on title
+  // Remove duplicates based on link
   const uniqueLeads = leads.filter((lead, index, self) =>
     index === self.findIndex((l) => (
-      l.title === lead.title
+      l.link === lead.link
     ))
   );
 
@@ -560,7 +573,7 @@ async function extractFacebookContentAndTime(browser, url) {
 
   const freshLeads = cutoffMs
     ? sortedLeads.filter((lead) => {
-        if (!lead.post_time) return true;
+        if (!lead.post_time) return false;
         const ts = Date.parse(lead.post_time);
         return Number.isFinite(ts) && ts >= cutoffMs;
       })
@@ -571,9 +584,15 @@ async function extractFacebookContentAndTime(browser, url) {
   // Add timestamp
   const finalLeads = {
     timestamp: new Date().toISOString(),
+    window: "24h",
     total_leads: finalFilteredLeads.length,
-    enhanced_leads: finalFilteredLeads.filter(l => l.enhanced).length,
-    leads: finalFilteredLeads
+    enhanced_leads: finalFilteredLeads.filter((l) => l.enhanced).length,
+    search_groups: SEARCH_QUERIES.map((q) => ({
+      label: q.label,
+      query: q.terms
+    })),
+    leads: finalFilteredLeads,
+    new_leads: finalFilteredLeads
   };
 
   // Output only JSON
