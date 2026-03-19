@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-03-19T06:22:44.476Z",
+  "timestamp": "2026-03-19T06:42:50.813Z",
   "window": "24h",
   "debug": {
-    "raw_results": 39,
-    "keyword_filtered": 16,
-    "unique_links": 10,
-    "enhanced_attempts": 10,
-    "within_24h_or_unknown": 10,
-    "unknown_post_time": 4
+    "raw_results": 45,
+    "keyword_filtered": 20,
+    "unique_links": 12,
+    "enhanced_attempts": 12,
+    "within_24h_or_unknown": 12,
+    "unknown_post_time": 5
   },
-  "total_leads": 4,
-  "enhanced_leads": 4,
+  "total_leads": 5,
+  "enhanced_leads": 5,
   "search_groups": [
     {
       "label": "🔥 חיפוש 1 — כוונה + כסף",
@@ -23,6 +23,21 @@
   ],
   "leads": [
     {
+      "title": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039601865638200/",
+      "snippet": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
+      "full_content": "Log In\nForgot Account?\nLovable AI - הקבוצה הרשמית\n \n · \nJoin\nדוד מגרילוב\n \n·\n13h\n \n·\nמחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני צריך לדעת וכדו׳?\nAll reactions:\n1\n6 comments\nLike\nComment\nShare\nMost relevant﻿\nErez Bar Haim\nאתה מחפש משהו או מחפש לבנות משהו?\nכי כל מערכת שליחת סמסים מאפשרת לטעון אקסל ולשלוח\n11h\nView all 2 replies\nYuval Haim\nעוקב\n12h\nAnonymous participant 193\ntwilio.com\nTWILIO.COM\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\n8h\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
+      "content_length": 642,
+      "enhanced": true,
+      "post_time": null,
+      "post_time_source": null,
+      "classification": "בינוני",
+      "evidence_quote": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני",
+      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
+      "opportunity_type": "בנייה מאפס"
+    },
+    {
       "title": "AI Project Team - Vibe Coding - Israel",
       "link": "https://www.facebook.com/groups/1684554685829832/posts/1979931716292126/",
       "snippet": "AI Project Team - Vibe Coding - Israel Facebook https://www.facebook.com › groups › posts",
@@ -53,6 +68,21 @@
       "opportunity_type": "לא רלוונטי"
     },
     {
+      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
+      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
+      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
+      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nLog in or sign up for Facebook to connect with friends, family and people you know.\nLog In\nor\nCreate new account",
+      "content_length": 594,
+      "enhanced": true,
+      "post_time": null,
+      "post_time_source": null,
+      "classification": "בינוני",
+      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
+      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
+      "opportunity_type": "לא רלוונטי"
+    },
+    {
       "title": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ...",
       "link": "https://www.facebook.com/groups/1598297010994941/posts/2197628427728460/",
       "snippet": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ... Facebook https://www.facebook.com › groups › posts",
@@ -66,25 +96,25 @@
       "evidence_quote": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי",
       "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
       "opportunity_type": "פרילנס / ספק"
-    },
-    {
-      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
-      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
-      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
-      "content_length": 579,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "לא רלוונטי"
     }
   ],
   "new_leads": [
     {
+      "title": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039601865638200/",
+      "snippet": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
+      "full_content": "Log In\nForgot Account?\nLovable AI - הקבוצה הרשמית\n \n · \nJoin\nדוד מגרילוב\n \n·\n13h\n \n·\nמחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני צריך לדעת וכדו׳?\nAll reactions:\n1\n6 comments\nLike\nComment\nShare\nMost relevant﻿\nErez Bar Haim\nאתה מחפש משהו או מחפש לבנות משהו?\nכי כל מערכת שליחת סמסים מאפשרת לטעון אקסל ולשלוח\n11h\nView all 2 replies\nYuval Haim\nעוקב\n12h\nAnonymous participant 193\ntwilio.com\nTWILIO.COM\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\n8h\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
+      "content_length": 642,
+      "enhanced": true,
+      "post_time": null,
+      "post_time_source": null,
+      "classification": "בינוני",
+      "evidence_quote": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני",
+      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
+      "opportunity_type": "בנייה מאפס"
+    },
+    {
       "title": "AI Project Team - Vibe Coding - Israel",
       "link": "https://www.facebook.com/groups/1684554685829832/posts/1979931716292126/",
       "snippet": "AI Project Team - Vibe Coding - Israel Facebook https://www.facebook.com › groups › posts",
@@ -115,6 +145,21 @@
       "opportunity_type": "לא רלוונטי"
     },
     {
+      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
+      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
+      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
+      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nLog in or sign up for Facebook to connect with friends, family and people you know.\nLog In\nor\nCreate new account",
+      "content_length": 594,
+      "enhanced": true,
+      "post_time": null,
+      "post_time_source": null,
+      "classification": "בינוני",
+      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
+      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
+      "opportunity_type": "לא רלוונטי"
+    },
+    {
       "title": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ...",
       "link": "https://www.facebook.com/groups/1598297010994941/posts/2197628427728460/",
       "snippet": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ... Facebook https://www.facebook.com › groups › posts",
@@ -128,21 +173,6 @@
       "evidence_quote": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי",
       "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
       "opportunity_type": "פרילנס / ספק"
-    },
-    {
-      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
-      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
-      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
-      "content_length": 579,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "לא רלוונטי"
     }
   ]
 }
