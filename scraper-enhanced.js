@@ -607,7 +607,13 @@ async function extractFacebookContentAndTime(browser, url) {
       query: q.terms
     })),
     leads: finalFilteredLeads,
-    new_leads: finalFilteredLeads
+    new_leads: finalFilteredLeads,
+    raw_results: allResults.length,
+    keyword_filtered: leads.length,
+    unique_links: uniqueLeads.length,
+    enhanced_attempts: enhancedLeads.length,
+    raw_results_items: allResults,
+    keyword_filtered_items: leads
   };
 
   // Output only JSON
