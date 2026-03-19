@@ -12,8 +12,8 @@ const SEARCH_QUERIES = [
   }
 ];
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
-const GOOGLE_TIME_WINDOW = "d";
-const MAX_POST_AGE_DAYS = 1;
+const GOOGLE_TIME_WINDOW = "w";
+const MAX_POST_AGE_DAYS = 7;
 const INCLUDE_UNKNOWN_TIME = process.env.INCLUDE_UNKNOWN_TIME === "true";
 const SEARCH_PROFILES = [
   { hl: "iw", lr: "lang_iw" },
@@ -589,13 +589,13 @@ async function extractFacebookContentAndTime(browser, url) {
   // Add timestamp
   const finalLeads = {
     timestamp: new Date().toISOString(),
-    window: "24h",
+    window: "7d",
     debug: {
       raw_results: allResults.length,
       keyword_filtered: leads.length,
       unique_links: uniqueLeads.length,
       enhanced_attempts: enhancedLeads.length,
-      within_24h_or_unknown: freshLeads.length,
+      within_window_or_unknown: freshLeads.length,
       unknown_post_time: unknownTimeCount,
       unknown_post_time_excluded: unknownTimeExcluded,
       include_unknown_time: INCLUDE_UNKNOWN_TIME
