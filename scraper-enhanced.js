@@ -14,6 +14,7 @@ const SEARCH_QUERIES = [
 const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
 const GOOGLE_TIME_WINDOW = "d";
 const MAX_POST_AGE_DAYS = 1;
+const INCLUDE_UNKNOWN_TIME = process.env.INCLUDE_UNKNOWN_TIME === "true";
 const SEARCH_PROFILES = [
   { hl: "iw", lr: "lang_iw" },
   { hl: "iw" }
@@ -571,10 +572,11 @@ async function extractFacebookContentAndTime(browser, url) {
     ? Date.now() - MAX_POST_AGE_DAYS * 24 * 60 * 60 * 1000
     : null;
 
-  // Keep leads with unknown timestamps to avoid false negatives when Facebook hides post time.
+  // Strict 24h mode by default: exclude leads with unknown timestamps.
+  // Set INCLUDE_UNKNOWN_TIME=true to include unknown-timestamp leads.
   const freshLeads = cutoffMs
     ? sortedLeads.filter((lead) => {
-        if (!lead.post_time) return true;
+        if (!lead.post_time) return INCLUDE_UNKNOWN_TIME;
         const ts = Date.parse(lead.post_time);
         return Number.isFinite(ts) && ts >= cutoffMs;
       })
@@ -582,6 +584,7 @@ async function extractFacebookContentAndTime(browser, url) {
 
   const finalFilteredLeads = freshLeads.filter((lead) => lead.classification !== "לא ליד");
   const unknownTimeCount = finalFilteredLeads.filter((lead) => !lead.post_time).length;
+  const unknownTimeExcluded = sortedLeads.filter((lead) => !lead.post_time).length - unknownTimeCount;
 
   // Add timestamp
   const finalLeads = {
@@ -593,7 +596,9 @@ async function extractFacebookContentAndTime(browser, url) {
       unique_links: uniqueLeads.length,
       enhanced_attempts: enhancedLeads.length,
       within_24h_or_unknown: freshLeads.length,
-      unknown_post_time: unknownTimeCount
+      unknown_post_time: unknownTimeCount,
+      unknown_post_time_excluded: unknownTimeExcluded,
+      include_unknown_time: INCLUDE_UNKNOWN_TIME
     },
     total_leads: finalFilteredLeads.length,
     enhanced_leads: finalFilteredLeads.filter((l) => l.enhanced).length,
