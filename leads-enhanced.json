@@ -1,16 +1,18 @@
 {
-  "timestamp": "2026-03-19T06:42:50.813Z",
+  "timestamp": "2026-03-19T07:03:03.518Z",
   "window": "24h",
   "debug": {
-    "raw_results": 45,
-    "keyword_filtered": 20,
-    "unique_links": 12,
-    "enhanced_attempts": 12,
-    "within_24h_or_unknown": 12,
-    "unknown_post_time": 5
+    "raw_results": 43,
+    "keyword_filtered": 22,
+    "unique_links": 15,
+    "enhanced_attempts": 15,
+    "within_24h_or_unknown": 0,
+    "unknown_post_time": 0,
+    "unknown_post_time_excluded": 15,
+    "include_unknown_time": false
   },
-  "total_leads": 5,
-  "enhanced_leads": 5,
+  "total_leads": 0,
+  "enhanced_leads": 0,
   "search_groups": [
     {
       "label": "🔥 חיפוש 1 — כוונה + כסף",
@@ -21,158 +23,6 @@
       "query": "site:facebook.com/groups (\"base44\" OR \"lovable\") (\"לא עובד\" OR \"תקוע\" OR \"בעיה\")"
     }
   ],
-  "leads": [
-    {
-      "title": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35039601865638200/",
-      "snippet": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nLovable AI - הקבוצה הרשמית\n \n · \nJoin\nדוד מגרילוב\n \n·\n13h\n \n·\nמחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני צריך לדעת וכדו׳?\nAll reactions:\n1\n6 comments\nLike\nComment\nShare\nMost relevant﻿\nErez Bar Haim\nאתה מחפש משהו או מחפש לבנות משהו?\nכי כל מערכת שליחת סמסים מאפשרת לטעון אקסל ולשלוח\n11h\nView all 2 replies\nYuval Haim\nעוקב\n12h\nAnonymous participant 193\ntwilio.com\nTWILIO.COM\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\n8h\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
-      "content_length": 642,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "בנייה מאפס"
-    },
-    {
-      "title": "AI Project Team - Vibe Coding - Israel",
-      "link": "https://www.facebook.com/groups/1684554685829832/posts/1979931716292126/",
-      "snippet": "AI Project Team - Vibe Coding - Israel Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " AI Project Team\n#AI_Israel_Club×AppDeploy_Hackathon_2026\n https://0709c0e4567f4b95af.v2.appdeploy.ai/\nמה הופך את האפליקציה הזו לשונה מכל דבר אחר?\nכל הכלים שקיימים היום עוזרים לך לנהל משימות. האפליקציה הזו היא הראשונה שבה סוכנים עושים את העבודה בפועל.\nאתה מתאר פרויקט במשפט אחד. ה-AI מייצר תוכנית מלאה — אבני דרך, משימות, דדליינים, עדיפויות. ואז, בלחיצה אחת, סוכני AI משלימים כל משימה ומייצרים תוצרים אמיתיים.\nלא הצעות. לא רשימות. תוצרים מוכנים לשימוש:\n מחקר ספקים עם טבלת השוואת מחירים \n טיוטת אימייל מוכנה לשליחה \n תוכנית תקציב מפורטת עם סעיפים \n ניתוח מתחרים מלא \n תסריט קמפיין שיווקי\nכל תוצר מגיע עם הצעות המשך — לחיצה אחת הופכת כל הצעה למשימה חדשה שהסוכן ישלים. זו לולאה אגנטית אמיתית: משימה → תוצר → הצעה → משימה חדשה → תוצר חדש.\nלמי זה מיועד?\nלכל מי שמנהל פרויקט מהחיים, לא רק למפתחים:\n בת מצווה ל-150 אורחים \n חתונה \n שיפוץ דירה \n השקת מוצר \n קורס אונליין \n קמפיין תוכן\nמה עוד יש פה:\n צ'אט עם מנהל AI שמבצע פעולות אמיתיות — מוסיף משימות, מוחק, עורך, שולח התראות החוצה. לא מציע — מבצע.\n דשבורד",
-      "content_length": 1000,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חזק",
-      "evidence_quote": "אתה מתאר פרויקט במשפט אחד",
-      "reason_he": "יש חיפוש ברור לביצוע עבודה טכנולוגית עם הקשר מסחרי/פרויקטלי.",
-      "opportunity_type": "בנייה מאפס"
-    },
-    {
-      "title": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן",
-      "link": "https://www.facebook.com/groups/756873564456858/posts/4060248747452640/",
-      "snippet": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " דרושים/ות נציגי תיאום פגישות \n פתח תקווה | אור יהודה | רמת גן | ראשון לציון | חולון | כפר סבא\n שעות עבודה נוחות: 09:30–17:00\n צוות צעיר, מקצועי ומשפחתי\n לא נדרש ניסיון קודם – הכשרה מלאה במקום\n \n עבודה חיונית\nרוצים/ות להצטרף?\n שלחו לי הודעה 053-2233616",
-      "content_length": 252,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חלש",
-      "evidence_quote": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן 🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן Facebook https://www",
-      "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
-      "opportunity_type": "לא רלוונטי"
-    },
-    {
-      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
-      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
-      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nLog in or sign up for Facebook to connect with friends, family and people you know.\nLog In\nor\nCreate new account",
-      "content_length": 594,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "לא רלוונטי"
-    },
-    {
-      "title": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ...",
-      "link": "https://www.facebook.com/groups/1598297010994941/posts/2197628427728460/",
-      "snippet": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ... Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " MG ZS אם ג׳י היברידי חדש 0 ק״מ 2026 מימון מלא \n שנת 2026\n מנוע היברידי חסכוני\n הדגם הכי מפואר\n אבזור:\n• גג פנוראמי נפתח\n• ריפודי עור שחורים\n• מצלמות 360\n• מולטימדיה מתקדמת\n• כניסה והנעה ללא מפתח\n מחירון: 156,000₪\n החל מ-1,490 ₪ בחודש\n טרייד אין אפשרי\n מימון עד 100% - ללא מקדמה\n 053-9666010\nKahlon Car ",
-      "content_length": 303,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חלש",
-      "evidence_quote": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי",
-      "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
-      "opportunity_type": "פרילנס / ספק"
-    }
-  ],
-  "new_leads": [
-    {
-      "title": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35039601865638200/",
-      "snippet": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nLovable AI - הקבוצה הרשמית\n \n · \nJoin\nדוד מגרילוב\n \n·\n13h\n \n·\nמחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני צריך לדעת וכדו׳?\nAll reactions:\n1\n6 comments\nLike\nComment\nShare\nMost relevant﻿\nErez Bar Haim\nאתה מחפש משהו או מחפש לבנות משהו?\nכי כל מערכת שליחת סמסים מאפשרת לטעון אקסל ולשלוח\n11h\nView all 2 replies\nYuval Haim\nעוקב\n12h\nAnonymous participant 193\ntwilio.com\nTWILIO.COM\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\nCommunications APIs with AI and data for SMS, Voice, Email | Twilio\n8h\nSee more on Facebook\nEmail or phone number\nPassword\nLog In\nForgot password?\nor\nCreate new account",
-      "content_length": 642,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "מחפש מערכת שתשלח SMS לרשימת אקסל - איך עושים , מה אני",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "בנייה מאפס"
-    },
-    {
-      "title": "AI Project Team - Vibe Coding - Israel",
-      "link": "https://www.facebook.com/groups/1684554685829832/posts/1979931716292126/",
-      "snippet": "AI Project Team - Vibe Coding - Israel Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " AI Project Team\n#AI_Israel_Club×AppDeploy_Hackathon_2026\n https://0709c0e4567f4b95af.v2.appdeploy.ai/\nמה הופך את האפליקציה הזו לשונה מכל דבר אחר?\nכל הכלים שקיימים היום עוזרים לך לנהל משימות. האפליקציה הזו היא הראשונה שבה סוכנים עושים את העבודה בפועל.\nאתה מתאר פרויקט במשפט אחד. ה-AI מייצר תוכנית מלאה — אבני דרך, משימות, דדליינים, עדיפויות. ואז, בלחיצה אחת, סוכני AI משלימים כל משימה ומייצרים תוצרים אמיתיים.\nלא הצעות. לא רשימות. תוצרים מוכנים לשימוש:\n מחקר ספקים עם טבלת השוואת מחירים \n טיוטת אימייל מוכנה לשליחה \n תוכנית תקציב מפורטת עם סעיפים \n ניתוח מתחרים מלא \n תסריט קמפיין שיווקי\nכל תוצר מגיע עם הצעות המשך — לחיצה אחת הופכת כל הצעה למשימה חדשה שהסוכן ישלים. זו לולאה אגנטית אמיתית: משימה → תוצר → הצעה → משימה חדשה → תוצר חדש.\nלמי זה מיועד?\nלכל מי שמנהל פרויקט מהחיים, לא רק למפתחים:\n בת מצווה ל-150 אורחים \n חתונה \n שיפוץ דירה \n השקת מוצר \n קורס אונליין \n קמפיין תוכן\nמה עוד יש פה:\n צ'אט עם מנהל AI שמבצע פעולות אמיתיות — מוסיף משימות, מוחק, עורך, שולח התראות החוצה. לא מציע — מבצע.\n דשבורד",
-      "content_length": 1000,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חזק",
-      "evidence_quote": "אתה מתאר פרויקט במשפט אחד",
-      "reason_he": "יש חיפוש ברור לביצוע עבודה טכנולוגית עם הקשר מסחרי/פרויקטלי.",
-      "opportunity_type": "בנייה מאפס"
-    },
-    {
-      "title": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן",
-      "link": "https://www.facebook.com/groups/756873564456858/posts/4060248747452640/",
-      "snippet": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " דרושים/ות נציגי תיאום פגישות \n פתח תקווה | אור יהודה | רמת גן | ראשון לציון | חולון | כפר סבא\n שעות עבודה נוחות: 09:30–17:00\n צוות צעיר, מקצועי ומשפחתי\n לא נדרש ניסיון קודם – הכשרה מלאה במקום\n \n עבודה חיונית\nרוצים/ות להצטרף?\n שלחו לי הודעה 053-2233616",
-      "content_length": 252,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חלש",
-      "evidence_quote": "🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן 🌟 דרושים/ות נציגי תיאום פגישות 🌟 📍 פתח תקווה | אור יהודה | רמת גן Facebook https://www",
-      "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
-      "opportunity_type": "לא רלוונטי"
-    },
-    {
-      "title": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים",
-      "link": "https://www.facebook.com/groups/1154054678060676/posts/3909552855844164/",
-      "snippet": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": "Log In\nForgot Account?\nצלמים ועורכים\n \n · \nJoin\nKineret Amran\n \n·\n16h\n \n·\nדרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים\n8 comments\nLike\nComment\nShare\nMost relevant﻿\nYarden Pery\nהיי כנרת שולח בפרטי\nhttps://yardzz.wixsite.com/yardenperyphot.../portraitfashion\nYARDZZ.WIXSITE.COM\nפורטרט ואופנה | yardenperyphotograpy\nפורטרט ואופנה | yardenperyphotograpy\n15h\nצלם ארועים אלברט אברהם\n9h\nLeedor Asher\nאשמח לפרטים \n054-904-1707\n10 שנים בתחום\n15h\nView more comments\n3 of 8\nLog in or sign up for Facebook to connect with friends, family and people you know.\nLog In\nor\nCreate new account",
-      "content_length": 594,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "בינוני",
-      "evidence_quote": "דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים דרוש צלם ליום צילום ועריכה לסרטוני רילס עבור צילומים של בגדי ים Facebook · צלמים ועורכים 7 תגובות Log In Forgot Acco",
-      "reason_he": "יש בקשה ממשית לאיש מקצוע טכנולוגי אך בלי סימני תשלום חזקים.",
-      "opportunity_type": "לא רלוונטי"
-    },
-    {
-      "title": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ...",
-      "link": "https://www.facebook.com/groups/1598297010994941/posts/2197628427728460/",
-      "snippet": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי ... Facebook https://www.facebook.com › groups › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף",
-      "full_content": " MG ZS אם ג׳י היברידי חדש 0 ק״מ 2026 מימון מלא \n שנת 2026\n מנוע היברידי חסכוני\n הדגם הכי מפואר\n אבזור:\n• גג פנוראמי נפתח\n• ריפודי עור שחורים\n• מצלמות 360\n• מולטימדיה מתקדמת\n• כניסה והנעה ללא מפתח\n מחירון: 156,000₪\n החל מ-1,490 ₪ בחודש\n טרייד אין אפשרי\n מימון עד 100% - ללא מקדמה\n 053-9666010\nKahlon Car ",
-      "content_length": 303,
-      "enhanced": true,
-      "post_time": null,
-      "post_time_source": null,
-      "classification": "חלש",
-      "evidence_quote": "הוד השרון והסביבה | פרסום חופשי לעסקים | דרושים | המלצות לבעלי",
-      "reason_he": "יש רמיזה מקצועית-מסחרית, אך הכוונה לרכישת שירות אינה חד-משמעית.",
-      "opportunity_type": "פרילנס / ספק"
-    }
-  ]
+  "leads": [],
+  "new_leads": []
 }
