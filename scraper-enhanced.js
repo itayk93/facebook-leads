@@ -571,20 +571,30 @@ async function extractFacebookContentAndTime(browser, url) {
     ? Date.now() - MAX_POST_AGE_DAYS * 24 * 60 * 60 * 1000
     : null;
 
+  // Keep leads with unknown timestamps to avoid false negatives when Facebook hides post time.
   const freshLeads = cutoffMs
     ? sortedLeads.filter((lead) => {
-        if (!lead.post_time) return false;
+        if (!lead.post_time) return true;
         const ts = Date.parse(lead.post_time);
         return Number.isFinite(ts) && ts >= cutoffMs;
       })
     : sortedLeads;
 
   const finalFilteredLeads = freshLeads.filter((lead) => lead.classification !== "לא ליד");
+  const unknownTimeCount = finalFilteredLeads.filter((lead) => !lead.post_time).length;
 
   // Add timestamp
   const finalLeads = {
     timestamp: new Date().toISOString(),
     window: "24h",
+    debug: {
+      raw_results: allResults.length,
+      keyword_filtered: leads.length,
+      unique_links: uniqueLeads.length,
+      enhanced_attempts: enhancedLeads.length,
+      within_24h_or_unknown: freshLeads.length,
+      unknown_post_time: unknownTimeCount
+    },
     total_leads: finalFilteredLeads.length,
     enhanced_leads: finalFilteredLeads.filter((l) => l.enhanced).length,
     search_groups: SEARCH_QUERIES.map((q) => ({
