@@ -2,7 +2,11 @@ name: Facebook Leads Scraper
 
 on:
   workflow_dispatch:
-    # Allow manual runs only
+    inputs:
+      run_id:
+        description: "Unique run identifier (from Supabase)"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -41,6 +45,7 @@ jobs:
     - name: Run Facebook Leads Scraper
       env:
         CAPSOLVER_API_KEY: ${{ secrets.CAPSOLVER_API_KEY }}
+        RUN_ID: ${{ github.event.inputs.run_id }}
       run: |
         echo "🔥 Starting Facebook Leads Scraper..."
         node scraper-enhanced.js
