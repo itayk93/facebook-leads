@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-03-20T11:27:20.827Z",
+  "timestamp": "2026-03-20T11:36:49.903Z",
   "window": "7d",
   "debug": {
     "raw_results": 60,
     "keyword_filtered": 60,
-    "unique_links": 46,
-    "enhanced_attempts": 46,
+    "unique_links": 45,
+    "enhanced_attempts": 45,
     "within_window_or_unknown": 0,
     "unknown_post_time": 0,
-    "unknown_post_time_excluded": 46,
+    "unknown_post_time_excluded": 45,
     "include_unknown_time": false
   },
   "total_leads": 0,
@@ -27,8 +27,8 @@
   "new_leads": [],
   "raw_results": 60,
   "keyword_filtered": 60,
-  "unique_links": 46,
-  "enhanced_attempts": 46,
+  "unique_links": 45,
+  "enhanced_attempts": 45,
   "raw_results_items": [
     {
       "title": "Lovable יותר טוב מbase44?",
@@ -45,13 +45,19 @@
     {
       "title": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35041465308785189/",
-      "snippet": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "snippet": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ... Facebook · Lovable AI - הקבוצה הרשמית 6 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
       "title": "מישהו כאן הצליח/יודע לשלב תשלום ב apple pay בפלטפורמה ...",
       "link": "https://www.facebook.com/groups/30155576030/posts/10164583655201031/",
       "snippet": "מישהו כאן הצליח/יודע לשלב תשלום ב apple pay בפלטפורמה ... Facebook · בניית אתרים, בוני אתרים בישראל. מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
+      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -67,6 +73,12 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
+      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
       "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
       "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
@@ -79,21 +91,15 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
+      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
-      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
-      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
+      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -109,18 +115,6 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
-      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
-      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
       "title": "שלום כולם יש לי כמה שאלות בפרטי על דומיינים ואבטחה תודה",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35040638622201191/",
       "snippet": "שלום כולם יש לי כמה שאלות בפרטי על דומיינים ואבטחה תודה Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -130,6 +124,12 @@
       "title": "האם מותר לפרסם גם משהו שבניתי במערכת אחרת או רק Loveable ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34950398054558582/",
       "snippet": "האם מותר לפרסם גם משהו שבניתי במערכת אחרת או רק Loveable ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34998726703059050/",
+      "snippet": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -145,18 +145,6 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34998726703059050/",
-      "snippet": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
-      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
       "title": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא?",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35000306166234437/",
       "snippet": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא? Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -169,21 +157,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
+      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
       "title": "חברים, סוף סוף זה באוויר 🚀",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34944135758518145/",
       "snippet": "חברים, סוף סוף זה באוויר 🚀 Facebook · Lovable AI - הקבוצה הרשמית מעל 70 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "במיוחד למשתמשי lovable: איך לנקות קוד מיותר שה-ai כתב ...",
-      "link": "https://www.facebook.com/groups/240346454182555/posts/1500310358186152/",
-      "snippet": "במיוחד למשתמשי lovable: איך לנקות קוד מיותר שה-ai כתב ... Facebook https://www.facebook.com › groups › posts",
+      "title": "היי! מישהו יכול להסביר לי למה בגוגל אנליטקיס זה מראה לי כל כך ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35038473215751065/",
+      "snippet": "היי! מישהו יכול להסביר לי למה בגוגל אנליטקיס זה מראה לי כל כך ... Facebook · Lovable AI - הקבוצה הרשמית 7 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
+      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -193,15 +187,21 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35051599737771746/",
-      "snippet": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
+      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
-      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
+      "title": "אפליקציה לניהול תשלומים ולקוחות",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35016109727987414/",
+      "snippet": "אפליקציה לניהול תשלומים ולקוחות Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35051599737771746/",
+      "snippet": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -211,33 +211,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "יש בעיה באפליקציה? פתאום מה שיצרתי לא נפתח לי. 15:30 19/3",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35054428860822167/",
+      "snippet": "יש בעיה באפליקציה? פתאום מה שיצרתי לא נפתח לי. 15:30 19/3 Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "יש תקלה ב lovable ? אני מקבלת הודעת שגיאה שיש איזו ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35034893032775750/",
       "snippet": "יש תקלה ב lovable ? אני מקבלת הודעת שגיאה שיש איזו ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "עשיתי אפליקציה ויצרתי אותה בpwa ושיהיה הודעות לנייד וזה לא ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35034842552780798/",
-      "snippet": "עשיתי אפליקציה ויצרתי אותה בpwa ושיהיה הודעות לנייד וזה לא ... Facebook https://www.facebook.com › groups › lovable.il › posts",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "יש לי בעיה נקודתית שאני רוצה בשבילה להעביר את הפרוייקט לקלוד ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35053272280937825/",
-      "snippet": "יש לי בעיה נקודתית שאני רוצה בשבילה להעביר את הפרוייקט לקלוד ... Facebook · Lovable AI - הקבוצה הרשמית 3 תגובות",
+      "title": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35053718687559851/",
+      "snippet": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
       "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
       "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35053718687559851/",
-      "snippet": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -259,15 +253,21 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
+      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
       "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
-      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
+      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -280,12 +280,6 @@
       "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
       "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35043055025292884/",
-      "snippet": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -313,12 +307,6 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35046493068282413/",
-      "snippet": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "תגידו,",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35035472169384503/",
       "snippet": "תגידו, Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
@@ -331,9 +319,9 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "סיימתי את הפרוייקט שלי מבסוט מהתוצאה עכשיו בישיבל להציג אותו ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34966145329650521/",
-      "snippet": "סיימתי את הפרוייקט שלי מבסוט מהתוצאה עכשיו בישיבל להציג אותו ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35046493068282413/",
+      "snippet": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -349,12 +337,6 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "משתפת פה תהליך אישי שעבד לי עם LOVABLE, לטובת מי ...",
-      "link": "https://www.facebook.com/groups/2707028082915519/posts/4301422606809384/",
-      "snippet": "משתפת פה תהליך אישי שעבד לי עם LOVABLE, לטובת מי ... Facebook · חינוך ביתי 2 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
       "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -367,15 +349,15 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
-      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מישהו שהחליף אתר וורדפרס לאתר בקוד ושמר על ה seo תקין?",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35034973669434353/",
+      "snippet": "מישהו שהחליף אתר וורדפרס לאתר בקוד ושמר על ה seo תקין? Facebook · Lovable AI - הקבוצה הרשמית 3 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35040349662230087/",
-      "snippet": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
+      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -385,9 +367,27 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35040349662230087/",
+      "snippet": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "היי לכולם 👋",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
+      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא?",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35000306166234437/",
       "snippet": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא? Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "איך אתם מוצאים לקוחות?",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34947101228221598/",
+      "snippet": "איך אתם מוצאים לקוחות? Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     }
   ],
@@ -407,13 +407,19 @@
     {
       "title": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35041465308785189/",
-      "snippet": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ... Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "snippet": "בניתי מערכת שהרבה בעלי עסקים רוצים אותה. לצורך העניין, אם אני ... Facebook · Lovable AI - הקבוצה הרשמית 6 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
       "title": "מישהו כאן הצליח/יודע לשלב תשלום ב apple pay בפלטפורמה ...",
       "link": "https://www.facebook.com/groups/30155576030/posts/10164583655201031/",
       "snippet": "מישהו כאן הצליח/יודע לשלב תשלום ב apple pay בפלטפורמה ... Facebook · בניית אתרים, בוני אתרים בישראל. מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
+      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -429,6 +435,12 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
+      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
       "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
       "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
@@ -441,21 +453,15 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
+      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34994911500107237/",
-      "snippet": "היי מה הולך, הייתי שמח להתייעץ על משהו. אני מחפש חברת סליקה ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
-      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
+      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -471,18 +477,6 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
-      "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34997744046490649/",
-      "snippet": "היי אשמח לעזרה אם מישהו חיבר למערכת שלו מנוע איימילים Facebook https://www.facebook.com › groups › lovable.il › posts",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
       "title": "שלום כולם יש לי כמה שאלות בפרטי על דומיינים ואבטחה תודה",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35040638622201191/",
       "snippet": "שלום כולם יש לי כמה שאלות בפרטי על דומיינים ואבטחה תודה Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -492,6 +486,12 @@
       "title": "האם מותר לפרסם גם משהו שבניתי במערכת אחרת או רק Loveable ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34950398054558582/",
       "snippet": "האם מותר לפרסם גם משהו שבניתי במערכת אחרת או רק Loveable ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34998726703059050/",
+      "snippet": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -507,18 +507,6 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34998726703059050/",
-      "snippet": "היי, אם אני כבר משלם על Pro Plan. ויש לי workspace ופרוייקט ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
-      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
-      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
-      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
-    },
-    {
       "title": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא?",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35000306166234437/",
       "snippet": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא? Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -531,21 +519,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
+      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
       "title": "חברים, סוף סוף זה באוויר 🚀",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34944135758518145/",
       "snippet": "חברים, סוף סוף זה באוויר 🚀 Facebook · Lovable AI - הקבוצה הרשמית מעל 70 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "במיוחד למשתמשי lovable: איך לנקות קוד מיותר שה-ai כתב ...",
-      "link": "https://www.facebook.com/groups/240346454182555/posts/1500310358186152/",
-      "snippet": "במיוחד למשתמשי lovable: איך לנקות קוד מיותר שה-ai כתב ... Facebook https://www.facebook.com › groups › posts",
+      "title": "היי! מישהו יכול להסביר לי למה בגוגל אנליטקיס זה מראה לי כל כך ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35038473215751065/",
+      "snippet": "היי! מישהו יכול להסביר לי למה בגוגל אנליטקיס זה מראה לי כל כך ... Facebook · Lovable AI - הקבוצה הרשמית 7 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
-      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
+      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
+      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -555,15 +549,21 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35051599737771746/",
-      "snippet": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מה זה supabase? - Lovable AI - הקבוצה הרשמית",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023228747275512/",
+      "snippet": "מה זה supabase? - Lovable AI - הקבוצה הרשמית Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
-      "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
-      "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
+      "title": "אפליקציה לניהול תשלומים ולקוחות",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35016109727987414/",
+      "snippet": "אפליקציה לניהול תשלומים ולקוחות Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 1 — כוונה + כסף"
+    },
+    {
+      "title": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35051599737771746/",
+      "snippet": "האם יש אופציה יותר טובה מlovable לבניית אתר? אתר שהוא ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
@@ -573,33 +573,27 @@
       "query_label": "🔥 חיפוש 1 — כוונה + כסף"
     },
     {
+      "title": "יש בעיה באפליקציה? פתאום מה שיצרתי לא נפתח לי. 15:30 19/3",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35054428860822167/",
+      "snippet": "יש בעיה באפליקציה? פתאום מה שיצרתי לא נפתח לי. 15:30 19/3 Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "יש תקלה ב lovable ? אני מקבלת הודעת שגיאה שיש איזו ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35034893032775750/",
       "snippet": "יש תקלה ב lovable ? אני מקבלת הודעת שגיאה שיש איזו ... Facebook · Lovable AI - הקבוצה הרשמית 5 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "עשיתי אפליקציה ויצרתי אותה בpwa ושיהיה הודעות לנייד וזה לא ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35034842552780798/",
-      "snippet": "עשיתי אפליקציה ויצרתי אותה בpwa ושיהיה הודעות לנייד וזה לא ... Facebook https://www.facebook.com › groups › lovable.il › posts",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "יש לי בעיה נקודתית שאני רוצה בשבילה להעביר את הפרוייקט לקלוד ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35053272280937825/",
-      "snippet": "יש לי בעיה נקודתית שאני רוצה בשבילה להעביר את הפרוייקט לקלוד ... Facebook · Lovable AI - הקבוצה הרשמית 3 תגובות",
+      "title": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35053718687559851/",
+      "snippet": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
       "title": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34985641534367567/",
       "snippet": "אז בניתי אחד, והוא זמין לכולם, ובחינם :) אז על מה אני ... Facebook · Lovable AI - הקבוצה הרשמית מעל 20 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35053718687559851/",
-      "snippet": "# **היי! אז יש לנו מערכת שנבנתה בלאבבל, מתפקדת עם משתמשים ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -621,15 +615,21 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
+      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34987941044137616/",
       "snippet": "היי יש לי שאלה לגבי lovable מקווה שאני מוסבר ברור Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
-      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
+      "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -642,12 +642,6 @@
       "title": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35039196735678713/",
       "snippet": "היי, במידה ובניתי אפליקציה ויש לי דומיין והכל, אבל היא Facebook · Lovable AI - הקבוצה הרשמית 8 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35043055025292884/",
-      "snippet": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -675,12 +669,6 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35046493068282413/",
-      "snippet": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "תגידו,",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35035472169384503/",
       "snippet": "תגידו, Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
@@ -693,9 +681,9 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "סיימתי את הפרוייקט שלי מבסוט מהתוצאה עכשיו בישיבל להציג אותו ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34966145329650521/",
-      "snippet": "סיימתי את הפרוייקט שלי מבסוט מהתוצאה עכשיו בישיבל להציג אותו ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35046493068282413/",
+      "snippet": "מישהו ניסה להמשיך את הפיתוח בקלוד או Gemini ואז לדחוף לגיט ... Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -711,12 +699,6 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "משתפת פה תהליך אישי שעבד לי עם LOVABLE, לטובת מי ...",
-      "link": "https://www.facebook.com/groups/2707028082915519/posts/4301422606809384/",
-      "snippet": "משתפת פה תהליך אישי שעבד לי עם LOVABLE, לטובת מי ... Facebook · חינוך ביתי 2 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
       "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
@@ -729,15 +711,15 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
-      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "title": "מישהו שהחליף אתר וורדפרס לאתר בקוד ושמר על ה seo תקין?",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35034973669434353/",
+      "snippet": "מישהו שהחליף אתר וורדפרס לאתר בקוד ושמר על ה seo תקין? Facebook · Lovable AI - הקבוצה הרשמית 3 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35040349662230087/",
-      "snippet": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34980505531547834/",
+      "snippet": "איך הקמתי מערכת מורכבת 100% lovable , עם לקוחות משלמים Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -747,9 +729,27 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35040349662230087/",
+      "snippet": "כמה חובה? Leaked Password Protection בשביל לשדרג SUPA ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "היי לכולם 👋",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
+      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא?",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35000306166234437/",
       "snippet": "שאלה,קרדיטים שלא השתמשתי בהם החודש - ישמרו לחודש הבא? Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "איך אתם מוצאים לקוחות?",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34947101228221598/",
+      "snippet": "איך אתם מוצאים לקוחות? Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     }
   ]
