@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-03-20T11:02:03.894Z",
+  "timestamp": "2026-03-20T11:17:00.565Z",
   "window": "7d",
   "debug": {
     "raw_results": 60,
     "keyword_filtered": 60,
-    "unique_links": 44,
-    "enhanced_attempts": 44,
+    "unique_links": 45,
+    "enhanced_attempts": 45,
     "within_window_or_unknown": 0,
     "unknown_post_time": 0,
-    "unknown_post_time_excluded": 44,
+    "unknown_post_time_excluded": 45,
     "include_unknown_time": false
   },
   "total_leads": 0,
@@ -27,8 +27,8 @@
   "new_leads": [],
   "raw_results": 60,
   "keyword_filtered": 60,
-  "unique_links": 44,
-  "enhanced_attempts": 44,
+  "unique_links": 45,
+  "enhanced_attempts": 45,
   "raw_results_items": [
     {
       "title": "מישהו כאן הצליח/יודע לשלב תשלום ב apple pay בפלטפורמה ...",
@@ -253,15 +253,15 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34967157616215959/",
-      "snippet": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "עף לי 100 קרדיט ביומיים ועדיין לא סיימתי את האתר במקביל עובד ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34994191110179276/",
       "snippet": "עף לי 100 קרדיט ביומיים ועדיין לא סיימתי את האתר במקביל עובד ... Facebook · Lovable AI - הקבוצה הרשמית 6 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34967157616215959/",
+      "snippet": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -337,15 +337,21 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
+      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "כמה מורכב לחבר את אתר שבניתי ב lovable למערכת תזמוני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34946443834954004/",
       "snippet": "כמה מורכב לחבר את אתר שבניתי ב lovable למערכת תזמוני ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
-      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
+      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -355,9 +361,9 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
-      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "title": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35043055025292884/",
+      "snippet": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -370,12 +376,6 @@
       "title": "תגידו,",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35035472169384503/",
       "snippet": "תגידו, Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "היי לכולם 👋",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
-      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -615,15 +615,15 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/34967157616215959/",
-      "snippet": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
       "title": "עף לי 100 קרדיט ביומיים ועדיין לא סיימתי את האתר במקביל עובד ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34994191110179276/",
       "snippet": "עף לי 100 קרדיט ביומיים ועדיין לא סיימתי את האתר במקביל עובד ... Facebook · Lovable AI - הקבוצה הרשמית 6 תגובות",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
+      "title": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/34967157616215959/",
+      "snippet": "היי לכולם, אני מנסה לשכפל פרוייקט קיים, אני זוכר שפעם היה כפתור ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -699,15 +699,21 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
+      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
+      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
+    },
+    {
       "title": "כמה מורכב לחבר את אתר שבניתי ב lovable למערכת תזמוני ...",
       "link": "https://www.facebook.com/groups/lovable.il/posts/34946443834954004/",
       "snippet": "כמה מורכב לחבר את אתר שבניתי ב lovable למערכת תזמוני ... Facebook · Lovable AI - הקבוצה הרשמית תגובה אחת",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35023797543885299/",
-      "snippet": "היי! פיתחתי אפליקציה פשוטה לסטודנטים רק בזכות lovable ,לפני ... Facebook https://www.facebook.com › groups › lovable.il › posts",
+      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
+      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -717,9 +723,9 @@
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
-      "title": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ...",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35012905094974544/",
-      "snippet": "הורדתי האפליקציה לראשונה. לא מבינה כלום אני כותבת את הרעיון ... Facebook · Lovable AI - הקבוצה הרשמית 9 תגובות",
+      "title": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ...",
+      "link": "https://www.facebook.com/groups/lovable.il/posts/35043055025292884/",
+      "snippet": "היי חברים יצרתי אפליקציה בעברית nitaimodel.com כשהמטרה ... Facebook · Lovable AI - הקבוצה הרשמית 2 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
@@ -732,12 +738,6 @@
       "title": "תגידו,",
       "link": "https://www.facebook.com/groups/lovable.il/posts/35035472169384503/",
       "snippet": "תגידו, Facebook · Lovable AI - הקבוצה הרשמית 4 תגובות",
-      "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
-    },
-    {
-      "title": "היי לכולם 👋",
-      "link": "https://www.facebook.com/groups/lovable.il/posts/35024580327140354/",
-      "snippet": "היי לכולם 👋 Facebook · Lovable AI - הקבוצה הרשמית מעל 10 תגובות",
       "query_label": "🔥 חיפוש 2 — כאב (הרבה יותר חזק)"
     },
     {
