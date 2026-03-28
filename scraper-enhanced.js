@@ -11,7 +11,8 @@ const SEARCH_QUERIES = [
     terms: `site:facebook.com/groups ("base44" OR "lovable") ("לא עובד" OR "תקוע" OR "בעיה")`
   }
 ];
-const CAPSOLVER_API_KEY = process.env.CAPSOLVER_API_KEY;
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GOOGLE_CX = process.env.GOOGLE_CX;
 const GOOGLE_TIME_WINDOW = "w";
 const MAX_POST_AGE_DAYS = 7;
 const INCLUDE_UNKNOWN_TIME = process.env.INCLUDE_UNKNOWN_TIME === "true";
@@ -20,131 +21,46 @@ const SEARCH_PROFILES = [
   { hl: "iw" }
 ];
 
-function buildGoogleSearchUrl(query, start = 0, profileIndex = 0) {
-  const profile = SEARCH_PROFILES[profileIndex] || SEARCH_PROFILES[0];
-  const tbsParts = ["sbd:1"];
-  if (GOOGLE_TIME_WINDOW && GOOGLE_TIME_WINDOW !== "all") {
-    tbsParts.unshift(`qdr:${GOOGLE_TIME_WINDOW}`);
-  }
-
+async function searchGoogleAPI(query, start = 1) {
   const params = new URLSearchParams({
+    key: GOOGLE_API_KEY,
+    cx: GOOGLE_CX,
     q: query,
-    hl: profile.hl,
-    tbs: tbsParts.join(","),
-    start: String(start)
+    start: String(start),
+    num: "10"
   });
-  if (profile.lr) params.set("lr", profile.lr);
+  if (GOOGLE_TIME_WINDOW && GOOGLE_TIME_WINDOW !== "all") {
+    params.set("dateRestrict", `${GOOGLE_TIME_WINDOW}1`);
+  }
 
-  return `https://www.google.com/search?${params.toString()}`;
+  const response = await fetch(`https://www.googleapis.com/customsearch/v1?${params}`);
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(`Google API error ${response.status}: ${err?.error?.message || response.statusText}`);
+  }
+
+  const data = await response.json();
+  return (data.items || []).map(item => ({
+    title: item.title || "",
+    link: item.link || "",
+    snippet: item.snippet || ""
+  }));
 }
 
-async function assertGoogleNotBlocked(page) {
-  const url = page.url();
-  if (url.includes("google.com/sorry")) {
-    throw new Error(`Google blocked this run with /sorry page: ${url}`);
-  }
-
-  const bodyText = await page.evaluate(() => (document.body?.innerText || "").toLowerCase());
-  if (bodyText.includes("unusual traffic") || bodyText.includes("about this page")) {
-    throw new Error("Google blocked this run due to unusual traffic.");
-  }
-}
-
-async function navigateGoogleWithFallback(page, query, start = 0, preferredProfileIndex = 0) {
-  const profileIndices = SEARCH_PROFILES.map((_, idx) => idx);
-  const order = [preferredProfileIndex, ...profileIndices].filter(
-    (idx, pos, arr) => arr.indexOf(idx) === pos
-  );
-
-  let lastError = null;
-  for (const profileIndex of order) {
-    const url = buildGoogleSearchUrl(query, start, profileIndex);
-    await page.goto(url, { waitUntil: "domcontentloaded" });
-    try {
-      await assertGoogleNotBlocked(page);
-      return profileIndex;
-    } catch (error) {
-      lastError = error;
-    }
-  }
-
-  throw lastError || new Error("Google blocked all configured search profiles.");
-}
-
-async function ensureCaptchaSolved(page) {
-  const captchaExists = await page.$('iframe[title*="reCAPTCHA"], div[id*="captcha"], .g-recaptcha');
-  if (!captchaExists) return;
-
-  const siteKey = await page.$eval('div[class*="recaptcha"]', el =>
-    el.getAttribute('data-sitekey')
-  ).catch(() => null);
-
-  if (!siteKey) {
-    await page.waitForTimeout(15000);
-    return;
-  }
-
-  const solution = await solveCaptchaWithCapsolver(siteKey, page.url());
-  if (!solution) {
-    await page.waitForTimeout(15000);
-    return;
-  }
-
-  await page.evaluate((token) => {
-    window.grecaptchaCallback = window.grecaptchaCallback || (() => {});
-    window.grecaptchaCallback(token);
-  }, solution);
-}
-
-async function collectSearchResultsForQuery(page, searchQuery) {
+async function collectSearchResultsForQuery(searchQuery) {
   const aggregated = [];
-  let activeProfileIndex = await navigateGoogleWithFallback(page, searchQuery.terms, 0, 0);
-  await ensureCaptchaSolved(page);
-  await page.waitForTimeout(3000);
 
   for (let pageNum = 0; pageNum < 3; pageNum++) {
-    if (pageNum > 0) {
-      activeProfileIndex = await navigateGoogleWithFallback(
-        page,
-        searchQuery.terms,
-        pageNum * 10,
-        activeProfileIndex
-      );
-      await ensureCaptchaSolved(page);
-      await page.waitForTimeout(2000);
-    }
-
-    const results = await page.evaluate(() => {
-      const seen = new Set();
-      const items = [];
-      const headings = Array.from(document.querySelectorAll("h3"));
-
-      for (const h3 of headings) {
-        const title = h3.innerText?.trim();
-        const anchor = h3.closest("a");
-        const link = anchor?.href || "";
-
-        if (!title || !link || seen.has(link)) continue;
-
-        const container = anchor.closest("div");
-        const rawText = container?.innerText || "";
-        const snippet = rawText.replace(/\s+/g, " ").trim().slice(0, 500);
-
-        items.push({ title, link, snippet });
-        seen.add(link);
-      }
-
-      return items.filter((r) => r.title && r.link);
-    });
-
+    const start = pageNum * 10 + 1;
+    const results = await searchGoogleAPI(searchQuery.terms, start);
     aggregated.push(
-      ...results.map((result) => ({
+      ...results.map(result => ({
         ...result,
         query_label: searchQuery.label
       }))
     );
-
-    await page.waitForTimeout(1000);
+    if (results.length < 10) break;
+    await new Promise(resolve => setTimeout(resolve, 1000));
   }
 
   return aggregated;
@@ -281,62 +197,6 @@ function classifyLead(lead) {
     reason_he: reason,
     opportunity_type: classification === "לא ליד" ? "לא רלוונטי" : inferOpportunityType(text)
   };
-}
-
-// Solve captcha with Capsolver API
-async function solveCaptchaWithCapsolver(siteKey, pageUrl) {
-  try {
-    const response = await fetch('https://api.capsolver.com/createTask', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${CAPSOLVER_API_KEY}`
-      },
-      body: JSON.stringify({
-        clientKey: CAPSOLVER_API_KEY,
-        task: {
-          type: "ReCaptchaV2TaskProxyless",
-          websiteURL: pageUrl,
-          websiteKey: siteKey
-        }
-      })
-    });
-
-    const taskData = await response.json();
-
-    if (taskData.errorId !== 0) {
-      throw new Error(taskData.errorDescription);
-    }
-
-    // Wait for solution
-    let solution = null;
-    for (let i = 0; i < 30; i++) {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const resultResponse = await fetch('https://api.capsolver.com/getTaskResult', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${CAPSOLVER_API_KEY}`
-        },
-        body: JSON.stringify({
-          clientKey: CAPSOLVER_API_KEY,
-          taskId: taskData.taskId
-        })
-      });
-
-      const result = await resultResponse.json();
-      
-      if (result.status === 'ready') {
-        solution = result.solution.gRecaptchaResponse;
-        break;
-      }
-    }
-
-    return solution;
-  } catch (error) {
-    return null;
-  }
 }
 
 // Extract more content and timestamp from Facebook post
@@ -478,12 +338,11 @@ async function extractFacebookContentAndTime(browser, url) {
 }
 
 (async () => {
-  // Check if environment variable is set
-  if (!CAPSOLVER_API_KEY) {
-    console.error("CAPSOLVER_API_KEY environment variable is required!");
+  if (!GOOGLE_API_KEY || !GOOGLE_CX) {
+    console.error("GOOGLE_API_KEY and GOOGLE_CX environment variables are required!");
     process.exit(1);
   }
-  
+
   const browser = await chromium.launch({
     headless: true,
     slowMo: 50,
@@ -495,18 +354,9 @@ async function extractFacebookContentAndTime(browser, url) {
     ]
   });
 
-  const page = await browser.newPage();
-  
-  // Hide automation
-  await page.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', {
-      get: () => undefined,
-    });
-  });
-
   const allResults = [];
   for (const searchQuery of SEARCH_QUERIES) {
-    const queryResults = await collectSearchResultsForQuery(page, searchQuery);
+    const queryResults = await collectSearchResultsForQuery(searchQuery);
     allResults.push(...queryResults);
   }
 

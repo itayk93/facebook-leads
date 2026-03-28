@@ -1,6 +1,10 @@
 name: Facebook Leads Scraper
 
 on:
+  schedule:
+    # 4x/day at 06:00, 10:00, 14:00, 18:00 UTC = 08:00, 12:00, 16:00, 20:00 Israel
+    # 4 runs × 6 API calls = 24 calls/day (well within 100/day free limit)
+    - cron: "0 6,10,14,18 * * *"
   workflow_dispatch:
     inputs:
       run_id:
@@ -44,7 +48,8 @@ jobs:
       
     - name: Run Facebook Leads Scraper
       env:
-        CAPSOLVER_API_KEY: ${{ secrets.CAPSOLVER_API_KEY }}
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        GOOGLE_CX: ${{ secrets.GOOGLE_CX }}
         RUN_ID: ${{ github.event.inputs.run_id }}
       run: |
         echo "🔥 Starting Facebook Leads Scraper..."
