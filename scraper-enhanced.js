@@ -1,4 +1,5 @@
 import fs from "fs";
+import { chromium } from "playwright";
 
 const SEARCH_QUERIES = [
   {
@@ -408,7 +409,7 @@ async function extractFacebookContentAndTime(browser, url) {
     enhancedLeads.push(enhancedLead);
     
     // Small delay between requests
-    await page.waitForTimeout(2000);
+    await new Promise((r) => setTimeout(r, 2000));
   }
 
   const sortedLeads = [...enhancedLeads].sort((a, b) => {
